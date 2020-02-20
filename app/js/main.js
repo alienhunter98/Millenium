@@ -71,34 +71,10 @@ $(document).ready(function(){
 	        }
 	    }
 	});
-	
-	$('.charity-carousel').owlCarousel({
-	    loop: true, // Зациклирование
-	    margin: 30, // Отступы
-	    nav: false, // Навигация
-	    dots: true, // Точки
-	    dotsEach:false,
-	    
-	    navText: [
-	    	'<svg class="flickity-button-icon btn-left" viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"></path></svg>',
-	    	'<svg class="flickity-button-icon btn-right" viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"></path></svg>'
-	    	],
-	    responsive:{
-	        0:{
-	            items:1
-	        },
-	        600:{ 
-	            items:2
-	        },
-	        1000:{
-	            items:4
-	        }
-	    }
-	});
 	$('.partners-carousel').owlCarousel({
 	    loop: true, // Зациклирование
-	    margin: 20, // Отступы
-	    nav: true, // Навигация
+	    margin: 0, // Отступы
+	    nav: false, // Навигация
 	    dots: false, // Точки
 	    dotsEach:false,
 	    
@@ -114,7 +90,7 @@ $(document).ready(function(){
 	            items:2
 	        },
 	        1000:{
-	            items:4
+	            items:5
 	        }
 	    }
 	});

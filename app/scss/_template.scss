@@ -1808,6 +1808,124 @@ label.error{
 			}
 		}
 	}
+	.news{
+		margin-top: 150px;
+		@media(max-width: 991px){
+			margin-top: 40px;
+		}
+		background-image: linear-gradient(to top,#f7f7f7,transparent);
+		.section-name{
+			margin-bottom: 60px;
+			@media(max-width: 991px){
+				margin-bottom: 30px;
+			}
+			padding-bottom: 30px;
+			position: relative;
+			&:before{
+				content: "";
+				position: absolute;
+				height: 5px;
+				width: 150px;
+				background-color:$color-1;
+				bottom: 0;
+				left: 0;
+			}
+			h2{
+				margin-top: 0;
+				margin-bottom: 0;
+			}
+		}
+		.novelties{
+			margin-bottom: 100px;
+			@media(max-width: 991px){
+				margin-bottom: 20px;
+			}
+			.novelty{
+				@media(max-width: 991px){
+					margin-bottom: 20px;
+				}
+				&:nth-child(3){
+					margin-top: -45px;
+					@media(max-width: 991px){
+						margin-top: 0px;
+					}
+				}
+				&:nth-child(2){
+					margin-top: 60px;
+					@media(max-width: 991px){
+						margin-top: 0px;
+					}
+				}
+				.img-content{
+					img{
+						width: 100%;
+					}
+				}
+				.desc-content{
+					min-height: 390px;
+					max-height: 390px;
+					@media(max-width: 991px){
+						min-height: auto;
+						max-height: auto;
+					}
+					.date{
+						padding: 20px 0;
+						p{
+							color:$color-1;
+						}
+					}
+					.desc{
+						h3{
+							font-weight: bold;
+							padding-bottom: 30px;
+						}
+						p{
+							padding-bottom: 30px;
+						}
+					}
+					.button{
+						padding-bottom: 30px;
+					}
+				}
+			}
+		}
+	}
+	.partners-wrapper{
+		background-color: white;
+		padding-top: 80px;
+		padding-bottom: 80px;
+		@media(max-width: 991px){
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+		.partners-carousel{
+			.item-wrapper{
+				padding: 15px;
+				&:hover{
+					.carousel-item{
+						box-shadow: 0px 2px 17px -10px #12121236;
+						transform:scale(1.1);
+					}
+				}
+				.carousel-item{
+					transition:all 0.3s ease;	
+					display: flex;
+					justify-content:center;
+					a{
+						min-height:130px; 
+						max-height:130px;
+						display: flex;
+						align-items:center;
+						justify-content:center;
+						padding: 20px;
+						img{
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
 }
 //footer
 footer{

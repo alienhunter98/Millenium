@@ -9868,6 +9868,117 @@ label.error {
             top: 88.5%; }
         .bg .about-2 .content-wrapper .img-content .img img {
           width: 100%; }
+  .bg .news {
+    margin-top: 150px;
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#f7f7f7), to(transparent));
+    background-image: -webkit-linear-gradient(bottom, #f7f7f7, transparent);
+    background-image: -o-linear-gradient(bottom, #f7f7f7, transparent);
+    background-image: linear-gradient(to top, #f7f7f7, transparent); }
+    @media (max-width: 991px) {
+      .bg .news {
+        margin-top: 40px; } }
+    .bg .news .section-name {
+      margin-bottom: 60px;
+      padding-bottom: 30px;
+      position: relative; }
+      @media (max-width: 991px) {
+        .bg .news .section-name {
+          margin-bottom: 30px; } }
+      .bg .news .section-name:before {
+        content: "";
+        position: absolute;
+        height: 5px;
+        width: 150px;
+        background-color: #e02b35;
+        bottom: 0;
+        left: 0; }
+      .bg .news .section-name h2 {
+        margin-top: 0;
+        margin-bottom: 0; }
+    .bg .news .novelties {
+      margin-bottom: 100px; }
+      @media (max-width: 991px) {
+        .bg .news .novelties {
+          margin-bottom: 20px; } }
+      @media (max-width: 991px) {
+        .bg .news .novelties .novelty {
+          margin-bottom: 20px; } }
+      .bg .news .novelties .novelty:nth-child(3) {
+        margin-top: -45px; }
+        @media (max-width: 991px) {
+          .bg .news .novelties .novelty:nth-child(3) {
+            margin-top: 0px; } }
+      .bg .news .novelties .novelty:nth-child(2) {
+        margin-top: 60px; }
+        @media (max-width: 991px) {
+          .bg .news .novelties .novelty:nth-child(2) {
+            margin-top: 0px; } }
+      .bg .news .novelties .novelty .img-content img {
+        width: 100%; }
+      .bg .news .novelties .novelty .desc-content {
+        min-height: 390px;
+        max-height: 390px; }
+        @media (max-width: 991px) {
+          .bg .news .novelties .novelty .desc-content {
+            min-height: auto;
+            max-height: auto; } }
+        .bg .news .novelties .novelty .desc-content .date {
+          padding: 20px 0; }
+          .bg .news .novelties .novelty .desc-content .date p {
+            color: #e02b35; }
+        .bg .news .novelties .novelty .desc-content .desc h3 {
+          font-weight: bold;
+          padding-bottom: 30px; }
+        .bg .news .novelties .novelty .desc-content .desc p {
+          padding-bottom: 30px; }
+        .bg .news .novelties .novelty .desc-content .button {
+          padding-bottom: 30px; }
+  .bg .partners-wrapper {
+    background-color: white;
+    padding-top: 80px;
+    padding-bottom: 80px; }
+    @media (max-width: 991px) {
+      .bg .partners-wrapper {
+        padding-top: 20px;
+        padding-bottom: 20px; } }
+    .bg .partners-wrapper .partners-carousel .item-wrapper {
+      padding: 15px; }
+      .bg .partners-wrapper .partners-carousel .item-wrapper:hover .carousel-item {
+        -webkit-box-shadow: 0px 2px 17px -10px #12121236;
+        box-shadow: 0px 2px 17px -10px #12121236;
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1); }
+      .bg .partners-wrapper .partners-carousel .item-wrapper .carousel-item {
+        -webkit-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center; }
+        .bg .partners-wrapper .partners-carousel .item-wrapper .carousel-item a {
+          min-height: 130px;
+          max-height: 130px;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          -ms-flex-align: center;
+          align-items: center;
+          -webkit-box-pack: center;
+          -webkit-justify-content: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          padding: 20px; }
+          .bg .partners-wrapper .partners-carousel .item-wrapper .carousel-item a img {
+            width: 100%; }
 
 footer .footer-main {
   background-color: white;
