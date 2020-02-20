@@ -8004,7 +8004,8 @@ body .select2-container--open:nth-last-child(2) {
 body {
   width: 100%;
   min-width: 100%;
-  height: 100%; }
+  height: 100%;
+  position: relative; }
 
 .check-mark-wrapper {
   width: 80%; }
@@ -8068,13 +8069,13 @@ body {
 
 ::-webkit-scrollbar-thumb {
   z-index: 500;
-  background-color: #f7f7f7; }
+  background-color: #e02b35; }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #eaeaea; }
+  background-color: #d31f29; }
 
 ::-webkit-scrollbar-thumb:active {
-  background-color: #dedede; }
+  background-color: #bc1c24; }
 
 ::-webkit-scrollbar-track-piece {
   background-color: white; }
@@ -8085,13 +8086,13 @@ body {
 
 ::-o-scrollbar-thumb {
   z-index: 500;
-  background-color: white; }
+  background-color: #e3414a; }
 
 ::-o-scrollbar-thumb:hover {
-  background-color: #eaeaea; }
+  background-color: #d31f29; }
 
 ::-o-scrollbar-thumb:active {
-  background-color: #dedede; }
+  background-color: #bc1c24; }
 
 ::-o-scrollbar-track-piece {
   background-color: rgba(255, 255, 255, 0.5); }
@@ -8281,22 +8282,20 @@ label.error {
     color: white; }
 
 .btn-def-2 {
-  font-size: 18px;
-  background-color: #e02b35;
+  font-size: 14px;
+  text-transform: uppercase;
+  background-color: transparent;
   height: 50px;
   display: inline-block;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease; }
-  .btn-def-2:hover {
-    background-color: #f7f7f7; }
   @media (max-width: 991px) {
     .btn-def-2 {
       font-size: 12px; } }
   .btn-def-2 a, .btn-def-2 button {
-    padding: 0 40px;
+    font-weight: 600;
+    padding: 0px;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -8312,7 +8311,17 @@ label.error {
     height: 100%;
     width: 100%;
     text-decoration: none;
-    color: white; }
+    color: black;
+    letter-spacing: 5px;
+    position: relative; }
+    .btn-def-2 a:before, .btn-def-2 button:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: #e02b35;
+      height: 2px;
+      width: 70px; }
 
 .btn-def-3 {
   font-size: 18px; }
@@ -8452,12 +8461,33 @@ label.error {
   -o-transition: all 0.1s ease;
   transition: all 0.1s ease; }
 
-.btn-right {
+.owl-nav {
+  position: absolute;
+  right: 50px;
+  bottom: -50px;
+  width: 100%;
+  -webkit-transform: translateX(-webkit-calc(100% + 75px));
+  -ms-transform: translateX(calc(100% + 75px));
+  transform: translateX(calc(100% + 75px)); }
+  @media (max-width: 991px) {
+    .owl-nav {
+      -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+      transform: translateX(0);
+      right: 10%;
+      bottom: 100px; } }
+
+.owl-next {
+  right: 0px;
+  top: 0;
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
-  transform: rotate(180deg); }
+  transform: rotate(180deg);
+  -webkit-border-radius: 30px 0px 0px 30px;
+  border-radius: 30px 0px 0px 30px; }
 
 .owl-next, .owl-prev {
+  position: absolute;
   height: 40px;
   width: 40px;
   cursor: pointer;
@@ -8473,28 +8503,38 @@ label.error {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.3);
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
-  transition: all 0.3s ease; }
+  transition: all 0.3s ease;
+  border: 1px solid #e02b35; }
   .owl-next:hover, .owl-prev:hover {
-    background-color: #e02b35;
-    border: transparent; }
+    background-color: #e02b35; }
+    .owl-next:hover i, .owl-prev:hover i {
+      color: white; }
+  .owl-next i, .owl-prev i {
+    color: #e02b35; }
   @media (max-width: 991px) {
     .owl-next, .owl-prev {
       margin: 0;
       height: 30px;
       width: 30px; } }
 
-@media (max-width: 991px) {
-  .owl-prev {
-    margin: 0; } }
+.owl-prev {
+  right: 40px;
+  top: 40px;
+  -webkit-border-radius: 30px 0px 0px 30px;
+  border-radius: 30px 0px 0px 30px; }
+  @media (max-width: 991px) {
+    .owl-prev {
+      margin: 0;
+      right: 30px;
+      top: 30px; } }
 
 .owl-dots {
   position: absolute;
-  bottom: 30px;
+  left: -30%;
+  bottom: 25%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8508,90 +8548,117 @@ label.error {
   -ms-flex-pack: center;
   justify-content: center;
   pointer-events: none;
-  width: 100%; }
+  width: 100px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  counter-reset: before; }
+  @media (max-width: 1425px) {
+    .owl-dots {
+      display: none; } }
+  @media (max-width: 991px) {
+    .owl-dots {
+      display: none; } }
   .owl-dots .owl-dot {
     position: relative;
     height: 10px;
     width: 31px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    background-color: #d9d9d9;
-    margin: 0 5px;
+    margin: 10px 0px;
     pointer-events: auto; }
+    .owl-dots .owl-dot.active:before {
+      font-size: 22px;
+      font-weight: bold;
+      color: #e02b35; }
+    .owl-dots .owl-dot:before {
+      color: #666666;
+      font-size: 14px;
+      font-family: "Gilroy";
+      counter-increment: before;
+      content: "- " counter(before);
+      position: absolute; }
     @media (max-width: 991px) {
       .owl-dots .owl-dot {
         height: 5px;
         width: 15px; } }
-  .owl-dots .owl-dot.active {
-    background-color: #e02b35; }
-    .owl-dots .owl-dot.active:before {
-      pointer-events: none;
-      content: "";
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      border: 1px solid #e02b35;
-      -webkit-border-radius: inherit;
-      border-radius: inherit;
-      -webkit-transform: scaleX(1.2) scaleY(1.4);
-      -ms-transform: scaleX(1.2) scaleY(1.4);
-      transform: scaleX(1.2) scaleY(1.4); }
-      @media (max-width: 991px) {
-        .owl-dots .owl-dot.active:before {
-          display: none; } }
 
 /*nav-styles*/
 .nav-style-1 .owl-next, .nav-style-1 .owl-prev {
-  pointer-events: auto;
-  border: 1px solid white; }
-  .nav-style-1 .owl-next:hover, .nav-style-1 .owl-prev:hover {
-    border: transparent; }
-
-.nav-style-1 .flickity-button-icon {
-  fill: white; }
+  pointer-events: auto; }
 
 .nav-style-1 .owl-nav {
-  pointer-events: none;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: absolute;
-  padding: 0;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  top: 50%;
-  width: 100%;
-  padding: 0 20px; }
+  left: 4.83%;
+  width: 100px;
+  right: auto;
+  bottom: 0;
+  -webkit-transform: translateX(0%);
+  -ms-transform: translateX(0%);
+  transform: translateX(0%); }
+  @media (max-width: 1199px) {
+    .nav-style-1 .owl-nav {
+      left: 3.3%; } }
+  @media (max-width: 991px) {
+    .nav-style-1 .owl-nav {
+      bottom: 25%;
+      left: 30%; } }
+  @media (max-width: 599px) {
+    .nav-style-1 .owl-nav {
+      bottom: 25%;
+      left: 60%; } }
+  .nav-style-1 .owl-nav .owl-next, .nav-style-1 .owl-nav .owl-prev {
+    background-color: white;
+    border: 1px solid #e3e3e3; }
+    .nav-style-1 .owl-nav .owl-next:hover, .nav-style-1 .owl-nav .owl-prev:hover {
+      background-color: #e02b35; }
+      .nav-style-1 .owl-nav .owl-next:hover i, .nav-style-1 .owl-nav .owl-prev:hover i {
+        color: white; }
+    .nav-style-1 .owl-nav .owl-next i, .nav-style-1 .owl-nav .owl-prev i {
+      color: #e02b35; }
 
-.nav-style-2 .owl-prev {
-  margin-right: 10px; }
-
-.nav-style-2 .owl-next, .nav-style-2 .owl-prev {
-  pointer-events: auto;
-  border: 1px solid #dddddd; }
-  .nav-style-2 .owl-next:hover, .nav-style-2 .owl-prev:hover {
-    border: transparent; }
-
-.nav-style-2 .flickity-button-icon {
-  fill: #cdcdcd; }
-
-.nav-style-2 .owl-nav {
-  margin-top: 20px;
-  pointer-events: none;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+.nav-style-1 .owl-dots {
+  margin-top: 30px;
+  margin-bottom: 30px;
   position: relative;
-  padding: 0;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  width: 100%; }
+  left: 50%;
+  bottom: 0;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row; }
+  @media (max-width: 1425px) {
+    .nav-style-1 .owl-dots {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      left: 35%; } }
+  @media (max-width: 991px) {
+    .nav-style-1 .owl-dots {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      transform: translateX(-50%); } }
+  .nav-style-1 .owl-dots .owl-dot {
+    margin: 0 10px;
+    min-height: 15px;
+    min-width: 15px;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid #e02b35; }
+    .nav-style-1 .owl-dots .owl-dot:before {
+      display: none; }
+  .nav-style-1 .owl-dots .owl-dot.active {
+    background-color: #e02b35;
+    -webkit-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    transform: scale(1.4); }
 
 .section-name {
   margin: 0; }
@@ -8784,6 +8851,9 @@ label.error {
 
 .hidden-div {
   height: 100px; }
+  @media (max-width: 991px) {
+    .hidden-div {
+      height: 70px; } }
 
 .main-menu {
   top: 0;
@@ -8798,7 +8868,7 @@ label.error {
   transform: translateX(100%);
   position: fixed;
   overflow-x: hidden;
-  z-index: 22;
+  z-index: 120;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9029,46 +9099,53 @@ label.error {
         .main-menu .menu-info .menu-social {
           padding-top: 30px;
           padding-bottom: 30px; } }
-      .main-menu .menu-info .menu-social span {
-        padding-right: 10px; }
-        .main-menu .menu-info .menu-social span:nth-child(3) a i {
-          font-size: 14px; }
-        .main-menu .menu-info .menu-social span:nth-child(2) a i {
-          font-size: 14px; }
-        .main-menu .menu-info .menu-social span:last-child a i {
-          font-size: 16px; }
-        .main-menu .menu-info .menu-social span a {
-          -webkit-transition: all 0.3s ease;
-          -o-transition: all 0.3s ease;
-          transition: all 0.3s ease;
-          height: 35px;
-          width: 35px;
-          -webkit-border-radius: 50%;
-          border-radius: 50%;
-          display: -webkit-box;
-          display: -webkit-flex;
-          display: -ms-flexbox;
-          display: flex;
-          -webkit-box-align: center;
-          -webkit-align-items: center;
-          -ms-flex-align: center;
-          align-items: center;
-          -webkit-box-pack: center;
-          -webkit-justify-content: center;
-          -ms-flex-pack: center;
-          justify-content: center;
-          background-color: #f7f7f7;
-          text-decoration: none; }
-          .main-menu .menu-info .menu-social span a:hover {
-            background-color: #e02b35; }
-            .main-menu .menu-info .menu-social span a:hover i {
-              color: white; }
-          .main-menu .menu-info .menu-social span a i {
+      .main-menu .menu-info .menu-social ul {
+        padding-left: 0;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex; }
+        .main-menu .menu-info .menu-social ul li {
+          list-style: none;
+          padding-right: 10px; }
+          .main-menu .menu-info .menu-social ul li:nth-child(3) a i {
+            font-size: 14px; }
+          .main-menu .menu-info .menu-social ul li:nth-child(2) a i {
+            font-size: 14px; }
+          .main-menu .menu-info .menu-social ul li:last-child a i {
+            font-size: 16px; }
+          .main-menu .menu-info .menu-social ul li a {
             -webkit-transition: all 0.3s ease;
             -o-transition: all 0.3s ease;
             transition: all 0.3s ease;
-            color: black;
-            font-size: 20px; }
+            height: 35px;
+            width: 35px;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            background-color: #f7f7f7;
+            text-decoration: none; }
+            .main-menu .menu-info .menu-social ul li a:hover {
+              background-color: #e02b35; }
+              .main-menu .menu-info .menu-social ul li a:hover i {
+                color: white; }
+            .main-menu .menu-info .menu-social ul li a i {
+              -webkit-transition: all 0.3s ease;
+              -o-transition: all 0.3s ease;
+              transition: all 0.3s ease;
+              color: black;
+              font-size: 20px; }
     .main-menu .menu-info .menu-close {
       position: absolute;
       top: 20px;
@@ -9130,7 +9207,8 @@ label.error {
         -webkit-box-pack: justify;
         -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
-        justify-content: space-between; } }
+        justify-content: space-between;
+        height: 70px; } }
     #header .header-wrapper .logo a {
       height: 100px;
       display: -webkit-box;
@@ -9147,7 +9225,8 @@ label.error {
           padding-right: 20px; } }
       @media (max-width: 991px) {
         #header .header-wrapper .logo a {
-          padding-left: 30px; } }
+          padding-left: 30px;
+          height: 70px; } }
     #header .header-wrapper .lists {
       display: -webkit-box;
       display: -webkit-flex;
@@ -9349,6 +9428,9 @@ label.error {
       -ms-flex-pack: center;
       justify-content: center;
       min-width: 100px; }
+      @media (max-width: 991px) {
+        #header .header-wrapper .menu-btn-wrapper label .menu-btn {
+          height: 70px; } }
       #header .header-wrapper .menu-btn-wrapper label .menu-btn .lines {
         display: -webkit-box;
         display: -webkit-flex;
@@ -9380,13 +9462,417 @@ label.error {
   transform: translateX(0); }
 
 .bg {
-  background-position: center;
+  background-position: top;
+  background-position-y: -200px;
   background-repeat: no-repeat;
   height: 100%; }
+  .bg .main-bnr {
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 100px; }
+    @media (max-width: 991px) {
+      .bg .main-bnr {
+        padding-top: 20px;
+        padding-bottom: 20px; } }
+    .bg .main-bnr .bnr-backgrounds {
+      pointer-events: none;
+      position: absolute;
+      top: 100px;
+      left: 110px; }
+      @media (max-width: 991px) {
+        .bg .main-bnr .bnr-backgrounds {
+          top: 10px;
+          left: 20px; } }
+      .bg .main-bnr .bnr-backgrounds h2 {
+        width: 50%;
+        font-size: 170px;
+        color: #f0f0f0;
+        font-weight: bold; }
+        @media (max-width: 1199px) {
+          .bg .main-bnr .bnr-backgrounds h2 {
+            font-size: 90px; } }
+        @media (max-width: 991px) {
+          .bg .main-bnr .bnr-backgrounds h2 {
+            font-size: 60px;
+            width: 100%; } }
+      .bg .main-bnr .bnr-backgrounds img {
+        position: absolute;
+        padding-top: 30px;
+        left: 180px; }
+        @media (max-width: 991px) {
+          .bg .main-bnr .bnr-backgrounds img {
+            width: 100%;
+            left: -10px; } }
+    .bg .main-bnr .img-content {
+      position: relative; }
+      .bg .main-bnr .img-content:before {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 100px;
+        background-color: #e02b35;
+        top: 30%;
+        right: -13%; }
+        @media (max-width: 1425px) {
+          .bg .main-bnr .img-content:before {
+            display: none; } }
+      .bg .main-bnr .img-content .bnr-social {
+        position: absolute;
+        top: 50%;
+        right: -20%; }
+        @media (max-width: 1425px) {
+          .bg .main-bnr .img-content .bnr-social {
+            display: none; } }
+        .bg .main-bnr .img-content .bnr-social ul {
+          padding-left: 0; }
+          .bg .main-bnr .img-content .bnr-social ul li {
+            list-style: none;
+            padding-right: 10px; }
+            .bg .main-bnr .img-content .bnr-social ul li:last-child {
+              padding-right: 0; }
+            .bg .main-bnr .img-content .bnr-social ul li:nth-child(3) a i {
+              font-size: 14px; }
+            .bg .main-bnr .img-content .bnr-social ul li:nth-child(2) a i {
+              font-size: 14px; }
+            .bg .main-bnr .img-content .bnr-social ul li:last-child a i {
+              font-size: 16px; }
+            .bg .main-bnr .img-content .bnr-social ul li a {
+              -webkit-transition: all 0.3s ease;
+              -o-transition: all 0.3s ease;
+              transition: all 0.3s ease;
+              height: 35px;
+              width: 35px;
+              -webkit-border-radius: 50%;
+              border-radius: 50%;
+              text-decoration: none;
+              display: -webkit-box;
+              display: -webkit-flex;
+              display: -ms-flexbox;
+              display: flex; }
+              .bg .main-bnr .img-content .bnr-social ul li a:hover i {
+                color: #e02b35; }
+              .bg .main-bnr .img-content .bnr-social ul li a i {
+                -webkit-transition: all 0.3s ease;
+                -o-transition: all 0.3s ease;
+                transition: all 0.3s ease;
+                color: black;
+                font-size: 20px; }
+      .bg .main-bnr .img-content img {
+        width: 100%; }
+    .bg .main-bnr .main-carousel .carousel-item .desc-content h2 {
+      font-weight: bold;
+      padding-top: 200px;
+      padding-bottom: 40px;
+      font-size: 90px; }
+      @media (max-width: 1245px) {
+        .bg .main-bnr .main-carousel .carousel-item .desc-content h2 {
+          font-size: 60px; } }
+      @media (max-width: 991px) {
+        .bg .main-bnr .main-carousel .carousel-item .desc-content h2 {
+          font-size: 40px;
+          padding-top: 0;
+          padding-bottom: 20px; } }
+      .bg .main-bnr .main-carousel .carousel-item .desc-content h2 span {
+        font-size: 90px;
+        color: #e02b35; }
+        @media (max-width: 1245px) {
+          .bg .main-bnr .main-carousel .carousel-item .desc-content h2 span {
+            font-size: 60px; } }
+        @media (max-width: 991px) {
+          .bg .main-bnr .main-carousel .carousel-item .desc-content h2 span {
+            font-size: 40px; } }
+    .bg .main-bnr .main-carousel .carousel-item .desc-content h4 {
+      margin-bottom: 40px;
+      letter-spacing: 6px;
+      text-transform: uppercase; }
+      .bg .main-bnr .main-carousel .carousel-item .desc-content h4 span {
+        font-size: 18px;
+        color: #e02b35;
+        font-weight: bold; }
+    .bg .main-bnr .main-carousel .carousel-item .desc-content .btn-def {
+      margin-bottom: 20px; }
+  .bg .about {
+    padding-top: 300px;
+    margin-bottom: 150px; }
+    @media (max-width: 991px) {
+      .bg .about {
+        padding-top: 20px;
+        margin-bottom: 20px; } }
+    .bg .about .img-content {
+      margin-top: -220px;
+      margin-bottom: 80px; }
+      @media (max-width: 991px) {
+        .bg .about .img-content {
+          margin-top: 0;
+          margin-bottom: 20px;
+          display: none; } }
+      .bg .about .img-content img {
+        width: 100%; }
+    .bg .about .desc-content {
+      margin-top: 0;
+      margin-bottom: 0; }
+      @media (min-width: 992px) {
+        .bg .about .desc-content {
+          padding-left: 0; } }
+      .bg .about .desc-content h2 {
+        font-weight: bold;
+        padding-bottom: 20px;
+        position: relative;
+        margin-bottom: 40px; }
+        @media (max-width: 991px) {
+          .bg .about .desc-content h2 {
+            margin-bottom: 20px;
+            padding-bottom: 0;
+            margin-top: 40px; } }
+        .bg .about .desc-content h2:before {
+          position: absolute;
+          content: "";
+          background-color: #e02b35;
+          height: 5px;
+          width: 150px;
+          bottom: 0;
+          right: 5%; }
+          @media (max-width: 991px) {
+            .bg .about .desc-content h2:before {
+              display: none; } }
+      .bg .about .desc-content p {
+        color: #666666;
+        line-height: 150%; }
+        @media (max-width: 991px) {
+          .bg .about .desc-content p {
+            text-align: justify; } }
+    .bg .about .task {
+      border-bottom: 5px solid #e02b35;
+      background-color: #f7f7f7;
+      padding: 60px 80px; }
+      @media (max-width: 991px) {
+        .bg .about .task {
+          margin-top: 30px; } }
+      .bg .about .task h2 {
+        font-weight: bold;
+        margin-bottom: 20px; }
+      .bg .about .task p {
+        line-height: 180%; }
+    @media (max-width: 991px) {
+      .bg .about .facts .item-wrapper {
+        margin-top: 30px;
+        margin-bottom: 30px; } }
+    .bg .about .facts .item-wrapper:first-child {
+      margin-top: -80px; }
+      @media (max-width: 991px) {
+        .bg .about .facts .item-wrapper:first-child {
+          margin-top: 30px; } }
+    .bg .about .facts .item-wrapper:nth-child(3) {
+      margin-top: -40px; }
+      @media (max-width: 991px) {
+        .bg .about .facts .item-wrapper:nth-child(3) {
+          margin-top: 30px; } }
+    .bg .about .facts .item-wrapper .facts-item {
+      min-height: 280px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      background-color: #f7f7f7;
+      padding: 30px 20px; }
+      @media (max-width: 991px) {
+        .bg .about .facts .item-wrapper .facts-item {
+          min-height: 200px; } }
+      .bg .about .facts .item-wrapper .facts-item img {
+        margin-top: 20px; }
+      .bg .about .facts .item-wrapper .facts-item h2 {
+        margin-top: 40px;
+        font-weight: bold;
+        color: #e02b35; }
+      .bg .about .facts .item-wrapper .facts-item p {
+        text-align: center; }
+    .bg .about .button {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: end;
+      -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+      justify-content: flex-end;
+      margin-bottom: 20px; }
+      @media (max-width: 991px) {
+        .bg .about .button {
+          -webkit-box-pack: center;
+          -webkit-justify-content: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          margin-bottom: 20px; } }
+  .bg .products {
+    overflow: hidden; }
+    .bg .products .products-desc {
+      position: relative;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      height: 707px; }
+      @media (max-width: 991px) {
+        .bg .products .products-desc {
+          height: auto; } }
+      .bg .products .products-desc .products-bg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -1; }
+        @media (max-width: 991px) {
+          .bg .products .products-desc .products-bg {
+            display: none; } }
+      .bg .products .products-desc .desc-content {
+        width: 70%; }
+        @media (max-width: 991px) {
+          .bg .products .products-desc .desc-content {
+            width: 100%;
+            margin-bottom: 20px; } }
+        .bg .products .products-desc .desc-content h2 {
+          font-weight: bold;
+          color: white;
+          margin-bottom: 40px; }
+          @media (max-width: 991px) {
+            .bg .products .products-desc .desc-content h2 {
+              margin-bottom: 20px;
+              color: black; } }
+        .bg .products .products-desc .desc-content p {
+          line-height: 180%;
+          color: white; }
+          @media (max-width: 991px) {
+            .bg .products .products-desc .desc-content p {
+              color: black;
+              text-align: justify; } }
+    .bg .products .products-carousel-wrapper {
+      position: relative; }
+      .bg .products .products-carousel-wrapper .products-carousel {
+        position: absolute;
+        left: -20%;
+        top: 0;
+        width: 1200px; }
+        @media (max-width: 991px) {
+          .bg .products .products-carousel-wrapper .products-carousel {
+            position: relative;
+            left: 0;
+            top: 0;
+            width: auto; } }
+        .bg .products .products-carousel-wrapper .products-carousel .item-wrapper {
+          padding: 10px 15px; }
+          .bg .products .products-carousel-wrapper .products-carousel .item-wrapper .carousel-item {
+            padding: 40px;
+            -webkit-box-shadow: 0px 5px 8px -4px #12121236;
+            box-shadow: 0px 5px 8px -4px #12121236;
+            background-color: white; }
+            .bg .products .products-carousel-wrapper .products-carousel .item-wrapper .carousel-item .img-content {
+              max-height: 291px;
+              min-height: 291px;
+              margin-bottom: 40px; }
+              .bg .products .products-carousel-wrapper .products-carousel .item-wrapper .carousel-item .img-content img {
+                max-height: 100%;
+                min-height: 100%;
+                width: auto;
+                margin-left: auto;
+                margin-right: auto; }
+            .bg .products .products-carousel-wrapper .products-carousel .item-wrapper .carousel-item .desc-content {
+              min-height: 120px;
+              max-height: 120px; }
+              .bg .products .products-carousel-wrapper .products-carousel .item-wrapper .carousel-item .desc-content h3 {
+                font-weight: bold; }
+              .bg .products .products-carousel-wrapper .products-carousel .item-wrapper .carousel-item .desc-content .btn-def-2 {
+                margin-top: 20px; }
+  .bg .about-2 {
+    margin-top: 150px;
+    margin-bottom: 40px; }
+    @media (max-width: 991px) {
+      .bg .about-2 {
+        margin-top: 20px;
+        margin-bottom: 20px; } }
+    .bg .about-2 .main-desc {
+      height: 470px;
+      padding: 0 140px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      background-image: url("../img/circle1.png"); }
+      @media (max-width: 991px) {
+        .bg .about-2 .main-desc {
+          height: auto; } }
+      @media (max-width: 991px) {
+        .bg .about-2 .main-desc {
+          background-image: none;
+          padding: 0px; } }
+      .bg .about-2 .main-desc h2 {
+        font-weight: bold; }
+        .bg .about-2 .main-desc h2 span {
+          font-size: 40px;
+          color: #e02b35; }
+          @media (max-width: 991px) {
+            .bg .about-2 .main-desc h2 span {
+              font-size: 20px; } }
+    .bg .about-2 .content-wrapper {
+      margin-top: 110px; }
+      @media (max-width: 991px) {
+        .bg .about-2 .content-wrapper {
+          margin-top: 20px; } }
+      @media (max-width: 991px) {
+        .bg .about-2 .content-wrapper .desc-content p {
+          text-align: justify; } }
+      .bg .about-2 .content-wrapper .desc-content .btn-def-2 {
+        margin-top: 20px; }
+      .bg .about-2 .content-wrapper .img-content .img {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        position: relative; }
+        .bg .about-2 .content-wrapper .img-content .img .circle-img {
+          position: absolute;
+          top: -15%;
+          left: 10%; }
+          @media (max-width: 991px) {
+            .bg .about-2 .content-wrapper .img-content .img .circle-img {
+              display: none; } }
+          .bg .about-2 .content-wrapper .img-content .img .circle-img img {
+            width: 100%; }
+        .bg .about-2 .content-wrapper .img-content .img .circle-img2 {
+          position: absolute;
+          right: 5%; }
+          @media (max-width: 991px) {
+            .bg .about-2 .content-wrapper .img-content .img .circle-img2 {
+              display: none; } }
+        .bg .about-2 .content-wrapper .img-content .img:nth-child(2) {
+          margin-top: -30%; }
+          @media (max-width: 991px) {
+            .bg .about-2 .content-wrapper .img-content .img:nth-child(2) {
+              margin-top: 0; } }
+          .bg .about-2 .content-wrapper .img-content .img:nth-child(2) .circle-img {
+            position: absolute;
+            left: 10%;
+            top: 88.5%; }
+        .bg .about-2 .content-wrapper .img-content .img img {
+          width: 100%; }
 
 footer .footer-main {
+  background-color: white;
   padding-top: 80px;
-  margin-bottom: 20px;
+  padding-bottom: 20px;
   border-top: 1px solid #f7f7f7; }
   @media (max-width: 991px) {
     footer .footer-main {
@@ -9435,48 +9921,55 @@ footer .footer-main {
           -ms-flex-pack: left;
           justify-content: left;
           padding-left: 0; } }
-      footer .footer-main .footer-info .information .footer-social span {
-        padding-right: 10px; }
-        footer .footer-main .footer-info .information .footer-social span:last-child {
-          padding-right: 0; }
-        footer .footer-main .footer-info .information .footer-social span:nth-child(3) a i {
-          font-size: 14px; }
-        footer .footer-main .footer-info .information .footer-social span:nth-child(2) a i {
-          font-size: 14px; }
-        footer .footer-main .footer-info .information .footer-social span:last-child a i {
-          font-size: 16px; }
-        footer .footer-main .footer-info .information .footer-social span a {
-          -webkit-transition: all 0.3s ease;
-          -o-transition: all 0.3s ease;
-          transition: all 0.3s ease;
-          height: 35px;
-          width: 35px;
-          -webkit-border-radius: 50%;
-          border-radius: 50%;
-          display: -webkit-box;
-          display: -webkit-flex;
-          display: -ms-flexbox;
-          display: flex;
-          -webkit-box-align: center;
-          -webkit-align-items: center;
-          -ms-flex-align: center;
-          align-items: center;
-          -webkit-box-pack: center;
-          -webkit-justify-content: center;
-          -ms-flex-pack: center;
-          justify-content: center;
-          background-color: #f7f7f7;
-          text-decoration: none; }
-          footer .footer-main .footer-info .information .footer-social span a:hover {
-            background-color: #e02b35; }
-            footer .footer-main .footer-info .information .footer-social span a:hover i {
-              color: white; }
-          footer .footer-main .footer-info .information .footer-social span a i {
+      footer .footer-main .footer-info .information .footer-social ul {
+        padding-left: 0;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex; }
+        footer .footer-main .footer-info .information .footer-social ul li {
+          list-style: none;
+          padding-right: 10px; }
+          footer .footer-main .footer-info .information .footer-social ul li:last-child {
+            padding-right: 0; }
+          footer .footer-main .footer-info .information .footer-social ul li:nth-child(3) a i {
+            font-size: 14px; }
+          footer .footer-main .footer-info .information .footer-social ul li:nth-child(2) a i {
+            font-size: 14px; }
+          footer .footer-main .footer-info .information .footer-social ul li:last-child a i {
+            font-size: 16px; }
+          footer .footer-main .footer-info .information .footer-social ul li a {
             -webkit-transition: all 0.3s ease;
             -o-transition: all 0.3s ease;
             transition: all 0.3s ease;
-            color: black;
-            font-size: 20px; }
+            height: 35px;
+            width: 35px;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            background-color: #f7f7f7;
+            text-decoration: none; }
+            footer .footer-main .footer-info .information .footer-social ul li a:hover {
+              background-color: #e02b35; }
+              footer .footer-main .footer-info .information .footer-social ul li a:hover i {
+                color: white; }
+            footer .footer-main .footer-info .information .footer-social ul li a i {
+              -webkit-transition: all 0.3s ease;
+              -o-transition: all 0.3s ease;
+              transition: all 0.3s ease;
+              color: black;
+              font-size: 20px; }
 
 footer .footer-bottom {
   background-color: #f7f7f7; }
@@ -9526,36 +10019,15 @@ footer .footer-bottom {
         color: #e02b35;
         padding-left: 5px; }
 
-@-webkit-keyframes toggleFlip {
-  0, 100% {
-    opacity: 1;
-    -webkit-filter: blur(0);
-    filter: blur(0); }
-  50% {
-    opacity: 0;
-    -webkit-filter: blur(4px);
-    filter: blur(4px); } }
-
-@keyframes toggleFlip {
-  0, 100% {
-    opacity: 1;
-    -webkit-filter: blur(0);
-    filter: blur(0); }
-  50% {
-    opacity: 0;
-    -webkit-filter: blur(4px);
-    filter: blur(4px); } }
-
-.olx {
+.bg-lines {
+  top: 0;
   width: 100%;
   height: 100%;
-  background-color: black;
   position: absolute;
-  z-index: 12323; }
-  .olx .container {
-    height: 100%;
-    width: 100%; }
-  .olx .items {
+  z-index: -1; }
+  .bg-lines .container {
+    height: 100%; }
+  .bg-lines .items {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -9565,817 +10037,10 @@ footer .footer-bottom {
     -ms-flex-pack: justify;
     justify-content: space-between;
     height: 100%; }
-    .olx .items span {
-      width: 100%;
-      background-color: black;
-      background-image: url("https://www.motortrend.com/uploads/sites/5/2020/11/2020-Chevrolet-Corvette-C8-in-orange.jpg");
+    .bg-lines .items span {
+      width: 1px;
       height: 100%;
-      opacity: 1;
-      background-repeat: no-repeat; }
-      .olx .items span:nth-child(0) {
-        -webkit-animation: toggleFlip 4s ease infinite 0s;
-        animation: toggleFlip 4s ease infinite 0s;
-        background-position-x: 0%; }
-      .olx .items span:nth-child(1) {
-        -webkit-animation: toggleFlip 4s ease infinite 0.1s;
-        animation: toggleFlip 4s ease infinite 0.1s;
-        background-position-x: 4%; }
-      .olx .items span:nth-child(2) {
-        -webkit-animation: toggleFlip 4s ease infinite 0.2s;
-        animation: toggleFlip 4s ease infinite 0.2s;
-        background-position-x: 8%; }
-      .olx .items span:nth-child(3) {
-        -webkit-animation: toggleFlip 4s ease infinite 0.3s;
-        animation: toggleFlip 4s ease infinite 0.3s;
-        background-position-x: 12%; }
-      .olx .items span:nth-child(4) {
-        -webkit-animation: toggleFlip 4s ease infinite 0.4s;
-        animation: toggleFlip 4s ease infinite 0.4s;
-        background-position-x: 16%; }
-      .olx .items span:nth-child(5) {
-        -webkit-animation: toggleFlip 4s ease infinite 0.5s;
-        animation: toggleFlip 4s ease infinite 0.5s;
-        background-position-x: 20%; }
-      .olx .items span:nth-child(6) {
-        -webkit-animation: toggleFlip 4s ease infinite 0.6s;
-        animation: toggleFlip 4s ease infinite 0.6s;
-        background-position-x: 24%; }
-      .olx .items span:nth-child(7) {
-        -webkit-animation: toggleFlip 4s ease infinite 0.7s;
-        animation: toggleFlip 4s ease infinite 0.7s;
-        background-position-x: 28%; }
-      .olx .items span:nth-child(8) {
-        -webkit-animation: toggleFlip 4s ease infinite 0.8s;
-        animation: toggleFlip 4s ease infinite 0.8s;
-        background-position-x: 32%; }
-      .olx .items span:nth-child(9) {
-        -webkit-animation: toggleFlip 4s ease infinite 0.9s;
-        animation: toggleFlip 4s ease infinite 0.9s;
-        background-position-x: 36%; }
-      .olx .items span:nth-child(10) {
-        -webkit-animation: toggleFlip 4s ease infinite 1s;
-        animation: toggleFlip 4s ease infinite 1s;
-        background-position-x: 40%; }
-      .olx .items span:nth-child(11) {
-        -webkit-animation: toggleFlip 4s ease infinite 1.1s;
-        animation: toggleFlip 4s ease infinite 1.1s;
-        background-position-x: 44%; }
-      .olx .items span:nth-child(12) {
-        -webkit-animation: toggleFlip 4s ease infinite 1.2s;
-        animation: toggleFlip 4s ease infinite 1.2s;
-        background-position-x: 48%; }
-      .olx .items span:nth-child(13) {
-        -webkit-animation: toggleFlip 4s ease infinite 1.3s;
-        animation: toggleFlip 4s ease infinite 1.3s;
-        background-position-x: 52%; }
-      .olx .items span:nth-child(14) {
-        -webkit-animation: toggleFlip 4s ease infinite 1.4s;
-        animation: toggleFlip 4s ease infinite 1.4s;
-        background-position-x: 56%; }
-      .olx .items span:nth-child(15) {
-        -webkit-animation: toggleFlip 4s ease infinite 1.5s;
-        animation: toggleFlip 4s ease infinite 1.5s;
-        background-position-x: 60%; }
-      .olx .items span:nth-child(16) {
-        -webkit-animation: toggleFlip 4s ease infinite 1.6s;
-        animation: toggleFlip 4s ease infinite 1.6s;
-        background-position-x: 64%; }
-      .olx .items span:nth-child(17) {
-        -webkit-animation: toggleFlip 4s ease infinite 1.7s;
-        animation: toggleFlip 4s ease infinite 1.7s;
-        background-position-x: 68%; }
-      .olx .items span:nth-child(18) {
-        -webkit-animation: toggleFlip 4s ease infinite 1.8s;
-        animation: toggleFlip 4s ease infinite 1.8s;
-        background-position-x: 72%; }
-      .olx .items span:nth-child(19) {
-        -webkit-animation: toggleFlip 4s ease infinite 1.9s;
-        animation: toggleFlip 4s ease infinite 1.9s;
-        background-position-x: 76%; }
-      .olx .items span:nth-child(20) {
-        -webkit-animation: toggleFlip 4s ease infinite 2s;
-        animation: toggleFlip 4s ease infinite 2s;
-        background-position-x: 80%; }
-      .olx .items span:nth-child(21) {
-        -webkit-animation: toggleFlip 4s ease infinite 2.1s;
-        animation: toggleFlip 4s ease infinite 2.1s;
-        background-position-x: 84%; }
-      .olx .items span:nth-child(22) {
-        -webkit-animation: toggleFlip 4s ease infinite 2.2s;
-        animation: toggleFlip 4s ease infinite 2.2s;
-        background-position-x: 88%; }
-      .olx .items span:nth-child(23) {
-        -webkit-animation: toggleFlip 4s ease infinite 2.3s;
-        animation: toggleFlip 4s ease infinite 2.3s;
-        background-position-x: 92%; }
-      .olx .items span:nth-child(24) {
-        -webkit-animation: toggleFlip 4s ease infinite 2.4s;
-        animation: toggleFlip 4s ease infinite 2.4s;
-        background-position-x: 96%; }
-      .olx .items span:nth-child(25) {
-        -webkit-animation: toggleFlip 4s ease infinite 2.5s;
-        animation: toggleFlip 4s ease infinite 2.5s;
-        background-position-x: 100%; }
-      .olx .items span:nth-child(26) {
-        -webkit-animation: toggleFlip 4s ease infinite 2.6s;
-        animation: toggleFlip 4s ease infinite 2.6s;
-        background-position-x: 104%; }
-      .olx .items span:nth-child(27) {
-        -webkit-animation: toggleFlip 4s ease infinite 2.7s;
-        animation: toggleFlip 4s ease infinite 2.7s;
-        background-position-x: 108%; }
-      .olx .items span:nth-child(28) {
-        -webkit-animation: toggleFlip 4s ease infinite 2.8s;
-        animation: toggleFlip 4s ease infinite 2.8s;
-        background-position-x: 112%; }
-      .olx .items span:nth-child(29) {
-        -webkit-animation: toggleFlip 4s ease infinite 2.9s;
-        animation: toggleFlip 4s ease infinite 2.9s;
-        background-position-x: 116%; }
-      .olx .items span:nth-child(30) {
-        -webkit-animation: toggleFlip 4s ease infinite 3s;
-        animation: toggleFlip 4s ease infinite 3s;
-        background-position-x: 120%; }
-      .olx .items span:nth-child(31) {
-        -webkit-animation: toggleFlip 4s ease infinite 3.1s;
-        animation: toggleFlip 4s ease infinite 3.1s;
-        background-position-x: 124%; }
-      .olx .items span:nth-child(32) {
-        -webkit-animation: toggleFlip 4s ease infinite 3.2s;
-        animation: toggleFlip 4s ease infinite 3.2s;
-        background-position-x: 128%; }
-      .olx .items span:nth-child(33) {
-        -webkit-animation: toggleFlip 4s ease infinite 3.3s;
-        animation: toggleFlip 4s ease infinite 3.3s;
-        background-position-x: 132%; }
-      .olx .items span:nth-child(34) {
-        -webkit-animation: toggleFlip 4s ease infinite 3.4s;
-        animation: toggleFlip 4s ease infinite 3.4s;
-        background-position-x: 136%; }
-      .olx .items span:nth-child(35) {
-        -webkit-animation: toggleFlip 4s ease infinite 3.5s;
-        animation: toggleFlip 4s ease infinite 3.5s;
-        background-position-x: 140%; }
-      .olx .items span:nth-child(36) {
-        -webkit-animation: toggleFlip 4s ease infinite 3.6s;
-        animation: toggleFlip 4s ease infinite 3.6s;
-        background-position-x: 144%; }
-      .olx .items span:nth-child(37) {
-        -webkit-animation: toggleFlip 4s ease infinite 3.7s;
-        animation: toggleFlip 4s ease infinite 3.7s;
-        background-position-x: 148%; }
-      .olx .items span:nth-child(38) {
-        -webkit-animation: toggleFlip 4s ease infinite 3.8s;
-        animation: toggleFlip 4s ease infinite 3.8s;
-        background-position-x: 152%; }
-      .olx .items span:nth-child(39) {
-        -webkit-animation: toggleFlip 4s ease infinite 3.9s;
-        animation: toggleFlip 4s ease infinite 3.9s;
-        background-position-x: 156%; }
-      .olx .items span:nth-child(40) {
-        -webkit-animation: toggleFlip 4s ease infinite 4s;
-        animation: toggleFlip 4s ease infinite 4s;
-        background-position-x: 160%; }
-      .olx .items span:nth-child(41) {
-        -webkit-animation: toggleFlip 4s ease infinite 4.1s;
-        animation: toggleFlip 4s ease infinite 4.1s;
-        background-position-x: 164%; }
-      .olx .items span:nth-child(42) {
-        -webkit-animation: toggleFlip 4s ease infinite 4.2s;
-        animation: toggleFlip 4s ease infinite 4.2s;
-        background-position-x: 168%; }
-      .olx .items span:nth-child(43) {
-        -webkit-animation: toggleFlip 4s ease infinite 4.3s;
-        animation: toggleFlip 4s ease infinite 4.3s;
-        background-position-x: 172%; }
-      .olx .items span:nth-child(44) {
-        -webkit-animation: toggleFlip 4s ease infinite 4.4s;
-        animation: toggleFlip 4s ease infinite 4.4s;
-        background-position-x: 176%; }
-      .olx .items span:nth-child(45) {
-        -webkit-animation: toggleFlip 4s ease infinite 4.5s;
-        animation: toggleFlip 4s ease infinite 4.5s;
-        background-position-x: 180%; }
-      .olx .items span:nth-child(46) {
-        -webkit-animation: toggleFlip 4s ease infinite 4.6s;
-        animation: toggleFlip 4s ease infinite 4.6s;
-        background-position-x: 184%; }
-      .olx .items span:nth-child(47) {
-        -webkit-animation: toggleFlip 4s ease infinite 4.7s;
-        animation: toggleFlip 4s ease infinite 4.7s;
-        background-position-x: 188%; }
-      .olx .items span:nth-child(48) {
-        -webkit-animation: toggleFlip 4s ease infinite 4.8s;
-        animation: toggleFlip 4s ease infinite 4.8s;
-        background-position-x: 192%; }
-      .olx .items span:nth-child(49) {
-        -webkit-animation: toggleFlip 4s ease infinite 4.9s;
-        animation: toggleFlip 4s ease infinite 4.9s;
-        background-position-x: 196%; }
-      .olx .items span:nth-child(50) {
-        -webkit-animation: toggleFlip 4s ease infinite 5s;
-        animation: toggleFlip 4s ease infinite 5s;
-        background-position-x: 200%; }
-      .olx .items span:nth-child(51) {
-        -webkit-animation: toggleFlip 4s ease infinite 5.1s;
-        animation: toggleFlip 4s ease infinite 5.1s;
-        background-position-x: 204%; }
-      .olx .items span:nth-child(52) {
-        -webkit-animation: toggleFlip 4s ease infinite 5.2s;
-        animation: toggleFlip 4s ease infinite 5.2s;
-        background-position-x: 208%; }
-      .olx .items span:nth-child(53) {
-        -webkit-animation: toggleFlip 4s ease infinite 5.3s;
-        animation: toggleFlip 4s ease infinite 5.3s;
-        background-position-x: 212%; }
-      .olx .items span:nth-child(54) {
-        -webkit-animation: toggleFlip 4s ease infinite 5.4s;
-        animation: toggleFlip 4s ease infinite 5.4s;
-        background-position-x: 216%; }
-      .olx .items span:nth-child(55) {
-        -webkit-animation: toggleFlip 4s ease infinite 5.5s;
-        animation: toggleFlip 4s ease infinite 5.5s;
-        background-position-x: 220%; }
-      .olx .items span:nth-child(56) {
-        -webkit-animation: toggleFlip 4s ease infinite 5.6s;
-        animation: toggleFlip 4s ease infinite 5.6s;
-        background-position-x: 224%; }
-      .olx .items span:nth-child(57) {
-        -webkit-animation: toggleFlip 4s ease infinite 5.7s;
-        animation: toggleFlip 4s ease infinite 5.7s;
-        background-position-x: 228%; }
-      .olx .items span:nth-child(58) {
-        -webkit-animation: toggleFlip 4s ease infinite 5.8s;
-        animation: toggleFlip 4s ease infinite 5.8s;
-        background-position-x: 232%; }
-      .olx .items span:nth-child(59) {
-        -webkit-animation: toggleFlip 4s ease infinite 5.9s;
-        animation: toggleFlip 4s ease infinite 5.9s;
-        background-position-x: 236%; }
-      .olx .items span:nth-child(60) {
-        -webkit-animation: toggleFlip 4s ease infinite 6s;
-        animation: toggleFlip 4s ease infinite 6s;
-        background-position-x: 240%; }
-      .olx .items span:nth-child(61) {
-        -webkit-animation: toggleFlip 4s ease infinite 6.1s;
-        animation: toggleFlip 4s ease infinite 6.1s;
-        background-position-x: 244%; }
-      .olx .items span:nth-child(62) {
-        -webkit-animation: toggleFlip 4s ease infinite 6.2s;
-        animation: toggleFlip 4s ease infinite 6.2s;
-        background-position-x: 248%; }
-      .olx .items span:nth-child(63) {
-        -webkit-animation: toggleFlip 4s ease infinite 6.3s;
-        animation: toggleFlip 4s ease infinite 6.3s;
-        background-position-x: 252%; }
-      .olx .items span:nth-child(64) {
-        -webkit-animation: toggleFlip 4s ease infinite 6.4s;
-        animation: toggleFlip 4s ease infinite 6.4s;
-        background-position-x: 256%; }
-      .olx .items span:nth-child(65) {
-        -webkit-animation: toggleFlip 4s ease infinite 6.5s;
-        animation: toggleFlip 4s ease infinite 6.5s;
-        background-position-x: 260%; }
-      .olx .items span:nth-child(66) {
-        -webkit-animation: toggleFlip 4s ease infinite 6.6s;
-        animation: toggleFlip 4s ease infinite 6.6s;
-        background-position-x: 264%; }
-      .olx .items span:nth-child(67) {
-        -webkit-animation: toggleFlip 4s ease infinite 6.7s;
-        animation: toggleFlip 4s ease infinite 6.7s;
-        background-position-x: 268%; }
-      .olx .items span:nth-child(68) {
-        -webkit-animation: toggleFlip 4s ease infinite 6.8s;
-        animation: toggleFlip 4s ease infinite 6.8s;
-        background-position-x: 272%; }
-      .olx .items span:nth-child(69) {
-        -webkit-animation: toggleFlip 4s ease infinite 6.9s;
-        animation: toggleFlip 4s ease infinite 6.9s;
-        background-position-x: 276%; }
-      .olx .items span:nth-child(70) {
-        -webkit-animation: toggleFlip 4s ease infinite 7s;
-        animation: toggleFlip 4s ease infinite 7s;
-        background-position-x: 280%; }
-      .olx .items span:nth-child(71) {
-        -webkit-animation: toggleFlip 4s ease infinite 7.1s;
-        animation: toggleFlip 4s ease infinite 7.1s;
-        background-position-x: 284%; }
-      .olx .items span:nth-child(72) {
-        -webkit-animation: toggleFlip 4s ease infinite 7.2s;
-        animation: toggleFlip 4s ease infinite 7.2s;
-        background-position-x: 288%; }
-      .olx .items span:nth-child(73) {
-        -webkit-animation: toggleFlip 4s ease infinite 7.3s;
-        animation: toggleFlip 4s ease infinite 7.3s;
-        background-position-x: 292%; }
-      .olx .items span:nth-child(74) {
-        -webkit-animation: toggleFlip 4s ease infinite 7.4s;
-        animation: toggleFlip 4s ease infinite 7.4s;
-        background-position-x: 296%; }
-      .olx .items span:nth-child(75) {
-        -webkit-animation: toggleFlip 4s ease infinite 7.5s;
-        animation: toggleFlip 4s ease infinite 7.5s;
-        background-position-x: 300%; }
-      .olx .items span:nth-child(76) {
-        -webkit-animation: toggleFlip 4s ease infinite 7.6s;
-        animation: toggleFlip 4s ease infinite 7.6s;
-        background-position-x: 304%; }
-      .olx .items span:nth-child(77) {
-        -webkit-animation: toggleFlip 4s ease infinite 7.7s;
-        animation: toggleFlip 4s ease infinite 7.7s;
-        background-position-x: 308%; }
-      .olx .items span:nth-child(78) {
-        -webkit-animation: toggleFlip 4s ease infinite 7.8s;
-        animation: toggleFlip 4s ease infinite 7.8s;
-        background-position-x: 312%; }
-      .olx .items span:nth-child(79) {
-        -webkit-animation: toggleFlip 4s ease infinite 7.9s;
-        animation: toggleFlip 4s ease infinite 7.9s;
-        background-position-x: 316%; }
-      .olx .items span:nth-child(80) {
-        -webkit-animation: toggleFlip 4s ease infinite 8s;
-        animation: toggleFlip 4s ease infinite 8s;
-        background-position-x: 320%; }
-      .olx .items span:nth-child(81) {
-        -webkit-animation: toggleFlip 4s ease infinite 8.1s;
-        animation: toggleFlip 4s ease infinite 8.1s;
-        background-position-x: 324%; }
-      .olx .items span:nth-child(82) {
-        -webkit-animation: toggleFlip 4s ease infinite 8.2s;
-        animation: toggleFlip 4s ease infinite 8.2s;
-        background-position-x: 328%; }
-      .olx .items span:nth-child(83) {
-        -webkit-animation: toggleFlip 4s ease infinite 8.3s;
-        animation: toggleFlip 4s ease infinite 8.3s;
-        background-position-x: 332%; }
-      .olx .items span:nth-child(84) {
-        -webkit-animation: toggleFlip 4s ease infinite 8.4s;
-        animation: toggleFlip 4s ease infinite 8.4s;
-        background-position-x: 336%; }
-      .olx .items span:nth-child(85) {
-        -webkit-animation: toggleFlip 4s ease infinite 8.5s;
-        animation: toggleFlip 4s ease infinite 8.5s;
-        background-position-x: 340%; }
-      .olx .items span:nth-child(86) {
-        -webkit-animation: toggleFlip 4s ease infinite 8.6s;
-        animation: toggleFlip 4s ease infinite 8.6s;
-        background-position-x: 344%; }
-      .olx .items span:nth-child(87) {
-        -webkit-animation: toggleFlip 4s ease infinite 8.7s;
-        animation: toggleFlip 4s ease infinite 8.7s;
-        background-position-x: 348%; }
-      .olx .items span:nth-child(88) {
-        -webkit-animation: toggleFlip 4s ease infinite 8.8s;
-        animation: toggleFlip 4s ease infinite 8.8s;
-        background-position-x: 352%; }
-      .olx .items span:nth-child(89) {
-        -webkit-animation: toggleFlip 4s ease infinite 8.9s;
-        animation: toggleFlip 4s ease infinite 8.9s;
-        background-position-x: 356%; }
-      .olx .items span:nth-child(90) {
-        -webkit-animation: toggleFlip 4s ease infinite 9s;
-        animation: toggleFlip 4s ease infinite 9s;
-        background-position-x: 360%; }
-      .olx .items span:nth-child(91) {
-        -webkit-animation: toggleFlip 4s ease infinite 9.1s;
-        animation: toggleFlip 4s ease infinite 9.1s;
-        background-position-x: 364%; }
-      .olx .items span:nth-child(92) {
-        -webkit-animation: toggleFlip 4s ease infinite 9.2s;
-        animation: toggleFlip 4s ease infinite 9.2s;
-        background-position-x: 368%; }
-      .olx .items span:nth-child(93) {
-        -webkit-animation: toggleFlip 4s ease infinite 9.3s;
-        animation: toggleFlip 4s ease infinite 9.3s;
-        background-position-x: 372%; }
-      .olx .items span:nth-child(94) {
-        -webkit-animation: toggleFlip 4s ease infinite 9.4s;
-        animation: toggleFlip 4s ease infinite 9.4s;
-        background-position-x: 376%; }
-      .olx .items span:nth-child(95) {
-        -webkit-animation: toggleFlip 4s ease infinite 9.5s;
-        animation: toggleFlip 4s ease infinite 9.5s;
-        background-position-x: 380%; }
-      .olx .items span:nth-child(96) {
-        -webkit-animation: toggleFlip 4s ease infinite 9.6s;
-        animation: toggleFlip 4s ease infinite 9.6s;
-        background-position-x: 384%; }
-      .olx .items span:nth-child(97) {
-        -webkit-animation: toggleFlip 4s ease infinite 9.7s;
-        animation: toggleFlip 4s ease infinite 9.7s;
-        background-position-x: 388%; }
-      .olx .items span:nth-child(98) {
-        -webkit-animation: toggleFlip 4s ease infinite 9.8s;
-        animation: toggleFlip 4s ease infinite 9.8s;
-        background-position-x: 392%; }
-      .olx .items span:nth-child(99) {
-        -webkit-animation: toggleFlip 4s ease infinite 9.9s;
-        animation: toggleFlip 4s ease infinite 9.9s;
-        background-position-x: 396%; }
-      .olx .items span:nth-child(100) {
-        -webkit-animation: toggleFlip 4s ease infinite 10s;
-        animation: toggleFlip 4s ease infinite 10s;
-        background-position-x: 400%; }
-      .olx .items span:nth-child(101) {
-        -webkit-animation: toggleFlip 4s ease infinite 10.1s;
-        animation: toggleFlip 4s ease infinite 10.1s;
-        background-position-x: 404%; }
-      .olx .items span:nth-child(102) {
-        -webkit-animation: toggleFlip 4s ease infinite 10.2s;
-        animation: toggleFlip 4s ease infinite 10.2s;
-        background-position-x: 408%; }
-      .olx .items span:nth-child(103) {
-        -webkit-animation: toggleFlip 4s ease infinite 10.3s;
-        animation: toggleFlip 4s ease infinite 10.3s;
-        background-position-x: 412%; }
-      .olx .items span:nth-child(104) {
-        -webkit-animation: toggleFlip 4s ease infinite 10.4s;
-        animation: toggleFlip 4s ease infinite 10.4s;
-        background-position-x: 416%; }
-      .olx .items span:nth-child(105) {
-        -webkit-animation: toggleFlip 4s ease infinite 10.5s;
-        animation: toggleFlip 4s ease infinite 10.5s;
-        background-position-x: 420%; }
-      .olx .items span:nth-child(106) {
-        -webkit-animation: toggleFlip 4s ease infinite 10.6s;
-        animation: toggleFlip 4s ease infinite 10.6s;
-        background-position-x: 424%; }
-      .olx .items span:nth-child(107) {
-        -webkit-animation: toggleFlip 4s ease infinite 10.7s;
-        animation: toggleFlip 4s ease infinite 10.7s;
-        background-position-x: 428%; }
-      .olx .items span:nth-child(108) {
-        -webkit-animation: toggleFlip 4s ease infinite 10.8s;
-        animation: toggleFlip 4s ease infinite 10.8s;
-        background-position-x: 432%; }
-      .olx .items span:nth-child(109) {
-        -webkit-animation: toggleFlip 4s ease infinite 10.9s;
-        animation: toggleFlip 4s ease infinite 10.9s;
-        background-position-x: 436%; }
-      .olx .items span:nth-child(110) {
-        -webkit-animation: toggleFlip 4s ease infinite 11s;
-        animation: toggleFlip 4s ease infinite 11s;
-        background-position-x: 440%; }
-      .olx .items span:nth-child(111) {
-        -webkit-animation: toggleFlip 4s ease infinite 11.1s;
-        animation: toggleFlip 4s ease infinite 11.1s;
-        background-position-x: 444%; }
-      .olx .items span:nth-child(112) {
-        -webkit-animation: toggleFlip 4s ease infinite 11.2s;
-        animation: toggleFlip 4s ease infinite 11.2s;
-        background-position-x: 448%; }
-      .olx .items span:nth-child(113) {
-        -webkit-animation: toggleFlip 4s ease infinite 11.3s;
-        animation: toggleFlip 4s ease infinite 11.3s;
-        background-position-x: 452%; }
-      .olx .items span:nth-child(114) {
-        -webkit-animation: toggleFlip 4s ease infinite 11.4s;
-        animation: toggleFlip 4s ease infinite 11.4s;
-        background-position-x: 456%; }
-      .olx .items span:nth-child(115) {
-        -webkit-animation: toggleFlip 4s ease infinite 11.5s;
-        animation: toggleFlip 4s ease infinite 11.5s;
-        background-position-x: 460%; }
-      .olx .items span:nth-child(116) {
-        -webkit-animation: toggleFlip 4s ease infinite 11.6s;
-        animation: toggleFlip 4s ease infinite 11.6s;
-        background-position-x: 464%; }
-      .olx .items span:nth-child(117) {
-        -webkit-animation: toggleFlip 4s ease infinite 11.7s;
-        animation: toggleFlip 4s ease infinite 11.7s;
-        background-position-x: 468%; }
-      .olx .items span:nth-child(118) {
-        -webkit-animation: toggleFlip 4s ease infinite 11.8s;
-        animation: toggleFlip 4s ease infinite 11.8s;
-        background-position-x: 472%; }
-      .olx .items span:nth-child(119) {
-        -webkit-animation: toggleFlip 4s ease infinite 11.9s;
-        animation: toggleFlip 4s ease infinite 11.9s;
-        background-position-x: 476%; }
-      .olx .items span:nth-child(120) {
-        -webkit-animation: toggleFlip 4s ease infinite 12s;
-        animation: toggleFlip 4s ease infinite 12s;
-        background-position-x: 480%; }
-      .olx .items span:nth-child(121) {
-        -webkit-animation: toggleFlip 4s ease infinite 12.1s;
-        animation: toggleFlip 4s ease infinite 12.1s;
-        background-position-x: 484%; }
-      .olx .items span:nth-child(122) {
-        -webkit-animation: toggleFlip 4s ease infinite 12.2s;
-        animation: toggleFlip 4s ease infinite 12.2s;
-        background-position-x: 488%; }
-      .olx .items span:nth-child(123) {
-        -webkit-animation: toggleFlip 4s ease infinite 12.3s;
-        animation: toggleFlip 4s ease infinite 12.3s;
-        background-position-x: 492%; }
-      .olx .items span:nth-child(124) {
-        -webkit-animation: toggleFlip 4s ease infinite 12.4s;
-        animation: toggleFlip 4s ease infinite 12.4s;
-        background-position-x: 496%; }
-      .olx .items span:nth-child(125) {
-        -webkit-animation: toggleFlip 4s ease infinite 12.5s;
-        animation: toggleFlip 4s ease infinite 12.5s;
-        background-position-x: 500%; }
-      .olx .items span:nth-child(126) {
-        -webkit-animation: toggleFlip 4s ease infinite 12.6s;
-        animation: toggleFlip 4s ease infinite 12.6s;
-        background-position-x: 504%; }
-      .olx .items span:nth-child(127) {
-        -webkit-animation: toggleFlip 4s ease infinite 12.7s;
-        animation: toggleFlip 4s ease infinite 12.7s;
-        background-position-x: 508%; }
-      .olx .items span:nth-child(128) {
-        -webkit-animation: toggleFlip 4s ease infinite 12.8s;
-        animation: toggleFlip 4s ease infinite 12.8s;
-        background-position-x: 512%; }
-      .olx .items span:nth-child(129) {
-        -webkit-animation: toggleFlip 4s ease infinite 12.9s;
-        animation: toggleFlip 4s ease infinite 12.9s;
-        background-position-x: 516%; }
-      .olx .items span:nth-child(130) {
-        -webkit-animation: toggleFlip 4s ease infinite 13s;
-        animation: toggleFlip 4s ease infinite 13s;
-        background-position-x: 520%; }
-      .olx .items span:nth-child(131) {
-        -webkit-animation: toggleFlip 4s ease infinite 13.1s;
-        animation: toggleFlip 4s ease infinite 13.1s;
-        background-position-x: 524%; }
-      .olx .items span:nth-child(132) {
-        -webkit-animation: toggleFlip 4s ease infinite 13.2s;
-        animation: toggleFlip 4s ease infinite 13.2s;
-        background-position-x: 528%; }
-      .olx .items span:nth-child(133) {
-        -webkit-animation: toggleFlip 4s ease infinite 13.3s;
-        animation: toggleFlip 4s ease infinite 13.3s;
-        background-position-x: 532%; }
-      .olx .items span:nth-child(134) {
-        -webkit-animation: toggleFlip 4s ease infinite 13.4s;
-        animation: toggleFlip 4s ease infinite 13.4s;
-        background-position-x: 536%; }
-      .olx .items span:nth-child(135) {
-        -webkit-animation: toggleFlip 4s ease infinite 13.5s;
-        animation: toggleFlip 4s ease infinite 13.5s;
-        background-position-x: 540%; }
-      .olx .items span:nth-child(136) {
-        -webkit-animation: toggleFlip 4s ease infinite 13.6s;
-        animation: toggleFlip 4s ease infinite 13.6s;
-        background-position-x: 544%; }
-      .olx .items span:nth-child(137) {
-        -webkit-animation: toggleFlip 4s ease infinite 13.7s;
-        animation: toggleFlip 4s ease infinite 13.7s;
-        background-position-x: 548%; }
-      .olx .items span:nth-child(138) {
-        -webkit-animation: toggleFlip 4s ease infinite 13.8s;
-        animation: toggleFlip 4s ease infinite 13.8s;
-        background-position-x: 552%; }
-      .olx .items span:nth-child(139) {
-        -webkit-animation: toggleFlip 4s ease infinite 13.9s;
-        animation: toggleFlip 4s ease infinite 13.9s;
-        background-position-x: 556%; }
-      .olx .items span:nth-child(140) {
-        -webkit-animation: toggleFlip 4s ease infinite 14s;
-        animation: toggleFlip 4s ease infinite 14s;
-        background-position-x: 560%; }
-      .olx .items span:nth-child(141) {
-        -webkit-animation: toggleFlip 4s ease infinite 14.1s;
-        animation: toggleFlip 4s ease infinite 14.1s;
-        background-position-x: 564%; }
-      .olx .items span:nth-child(142) {
-        -webkit-animation: toggleFlip 4s ease infinite 14.2s;
-        animation: toggleFlip 4s ease infinite 14.2s;
-        background-position-x: 568%; }
-      .olx .items span:nth-child(143) {
-        -webkit-animation: toggleFlip 4s ease infinite 14.3s;
-        animation: toggleFlip 4s ease infinite 14.3s;
-        background-position-x: 572%; }
-      .olx .items span:nth-child(144) {
-        -webkit-animation: toggleFlip 4s ease infinite 14.4s;
-        animation: toggleFlip 4s ease infinite 14.4s;
-        background-position-x: 576%; }
-      .olx .items span:nth-child(145) {
-        -webkit-animation: toggleFlip 4s ease infinite 14.5s;
-        animation: toggleFlip 4s ease infinite 14.5s;
-        background-position-x: 580%; }
-      .olx .items span:nth-child(146) {
-        -webkit-animation: toggleFlip 4s ease infinite 14.6s;
-        animation: toggleFlip 4s ease infinite 14.6s;
-        background-position-x: 584%; }
-      .olx .items span:nth-child(147) {
-        -webkit-animation: toggleFlip 4s ease infinite 14.7s;
-        animation: toggleFlip 4s ease infinite 14.7s;
-        background-position-x: 588%; }
-      .olx .items span:nth-child(148) {
-        -webkit-animation: toggleFlip 4s ease infinite 14.8s;
-        animation: toggleFlip 4s ease infinite 14.8s;
-        background-position-x: 592%; }
-      .olx .items span:nth-child(149) {
-        -webkit-animation: toggleFlip 4s ease infinite 14.9s;
-        animation: toggleFlip 4s ease infinite 14.9s;
-        background-position-x: 596%; }
-      .olx .items span:nth-child(150) {
-        -webkit-animation: toggleFlip 4s ease infinite 15s;
-        animation: toggleFlip 4s ease infinite 15s;
-        background-position-x: 600%; }
-      .olx .items span:nth-child(151) {
-        -webkit-animation: toggleFlip 4s ease infinite 15.1s;
-        animation: toggleFlip 4s ease infinite 15.1s;
-        background-position-x: 604%; }
-      .olx .items span:nth-child(152) {
-        -webkit-animation: toggleFlip 4s ease infinite 15.2s;
-        animation: toggleFlip 4s ease infinite 15.2s;
-        background-position-x: 608%; }
-      .olx .items span:nth-child(153) {
-        -webkit-animation: toggleFlip 4s ease infinite 15.3s;
-        animation: toggleFlip 4s ease infinite 15.3s;
-        background-position-x: 612%; }
-      .olx .items span:nth-child(154) {
-        -webkit-animation: toggleFlip 4s ease infinite 15.4s;
-        animation: toggleFlip 4s ease infinite 15.4s;
-        background-position-x: 616%; }
-      .olx .items span:nth-child(155) {
-        -webkit-animation: toggleFlip 4s ease infinite 15.5s;
-        animation: toggleFlip 4s ease infinite 15.5s;
-        background-position-x: 620%; }
-      .olx .items span:nth-child(156) {
-        -webkit-animation: toggleFlip 4s ease infinite 15.6s;
-        animation: toggleFlip 4s ease infinite 15.6s;
-        background-position-x: 624%; }
-      .olx .items span:nth-child(157) {
-        -webkit-animation: toggleFlip 4s ease infinite 15.7s;
-        animation: toggleFlip 4s ease infinite 15.7s;
-        background-position-x: 628%; }
-      .olx .items span:nth-child(158) {
-        -webkit-animation: toggleFlip 4s ease infinite 15.8s;
-        animation: toggleFlip 4s ease infinite 15.8s;
-        background-position-x: 632%; }
-      .olx .items span:nth-child(159) {
-        -webkit-animation: toggleFlip 4s ease infinite 15.9s;
-        animation: toggleFlip 4s ease infinite 15.9s;
-        background-position-x: 636%; }
-      .olx .items span:nth-child(160) {
-        -webkit-animation: toggleFlip 4s ease infinite 16s;
-        animation: toggleFlip 4s ease infinite 16s;
-        background-position-x: 640%; }
-      .olx .items span:nth-child(161) {
-        -webkit-animation: toggleFlip 4s ease infinite 16.1s;
-        animation: toggleFlip 4s ease infinite 16.1s;
-        background-position-x: 644%; }
-      .olx .items span:nth-child(162) {
-        -webkit-animation: toggleFlip 4s ease infinite 16.2s;
-        animation: toggleFlip 4s ease infinite 16.2s;
-        background-position-x: 648%; }
-      .olx .items span:nth-child(163) {
-        -webkit-animation: toggleFlip 4s ease infinite 16.3s;
-        animation: toggleFlip 4s ease infinite 16.3s;
-        background-position-x: 652%; }
-      .olx .items span:nth-child(164) {
-        -webkit-animation: toggleFlip 4s ease infinite 16.4s;
-        animation: toggleFlip 4s ease infinite 16.4s;
-        background-position-x: 656%; }
-      .olx .items span:nth-child(165) {
-        -webkit-animation: toggleFlip 4s ease infinite 16.5s;
-        animation: toggleFlip 4s ease infinite 16.5s;
-        background-position-x: 660%; }
-      .olx .items span:nth-child(166) {
-        -webkit-animation: toggleFlip 4s ease infinite 16.6s;
-        animation: toggleFlip 4s ease infinite 16.6s;
-        background-position-x: 664%; }
-      .olx .items span:nth-child(167) {
-        -webkit-animation: toggleFlip 4s ease infinite 16.7s;
-        animation: toggleFlip 4s ease infinite 16.7s;
-        background-position-x: 668%; }
-      .olx .items span:nth-child(168) {
-        -webkit-animation: toggleFlip 4s ease infinite 16.8s;
-        animation: toggleFlip 4s ease infinite 16.8s;
-        background-position-x: 672%; }
-      .olx .items span:nth-child(169) {
-        -webkit-animation: toggleFlip 4s ease infinite 16.9s;
-        animation: toggleFlip 4s ease infinite 16.9s;
-        background-position-x: 676%; }
-      .olx .items span:nth-child(170) {
-        -webkit-animation: toggleFlip 4s ease infinite 17s;
-        animation: toggleFlip 4s ease infinite 17s;
-        background-position-x: 680%; }
-      .olx .items span:nth-child(171) {
-        -webkit-animation: toggleFlip 4s ease infinite 17.1s;
-        animation: toggleFlip 4s ease infinite 17.1s;
-        background-position-x: 684%; }
-      .olx .items span:nth-child(172) {
-        -webkit-animation: toggleFlip 4s ease infinite 17.2s;
-        animation: toggleFlip 4s ease infinite 17.2s;
-        background-position-x: 688%; }
-      .olx .items span:nth-child(173) {
-        -webkit-animation: toggleFlip 4s ease infinite 17.3s;
-        animation: toggleFlip 4s ease infinite 17.3s;
-        background-position-x: 692%; }
-      .olx .items span:nth-child(174) {
-        -webkit-animation: toggleFlip 4s ease infinite 17.4s;
-        animation: toggleFlip 4s ease infinite 17.4s;
-        background-position-x: 696%; }
-      .olx .items span:nth-child(175) {
-        -webkit-animation: toggleFlip 4s ease infinite 17.5s;
-        animation: toggleFlip 4s ease infinite 17.5s;
-        background-position-x: 700%; }
-      .olx .items span:nth-child(176) {
-        -webkit-animation: toggleFlip 4s ease infinite 17.6s;
-        animation: toggleFlip 4s ease infinite 17.6s;
-        background-position-x: 704%; }
-      .olx .items span:nth-child(177) {
-        -webkit-animation: toggleFlip 4s ease infinite 17.7s;
-        animation: toggleFlip 4s ease infinite 17.7s;
-        background-position-x: 708%; }
-      .olx .items span:nth-child(178) {
-        -webkit-animation: toggleFlip 4s ease infinite 17.8s;
-        animation: toggleFlip 4s ease infinite 17.8s;
-        background-position-x: 712%; }
-      .olx .items span:nth-child(179) {
-        -webkit-animation: toggleFlip 4s ease infinite 17.9s;
-        animation: toggleFlip 4s ease infinite 17.9s;
-        background-position-x: 716%; }
-      .olx .items span:nth-child(180) {
-        -webkit-animation: toggleFlip 4s ease infinite 18s;
-        animation: toggleFlip 4s ease infinite 18s;
-        background-position-x: 720%; }
-      .olx .items span:nth-child(181) {
-        -webkit-animation: toggleFlip 4s ease infinite 18.1s;
-        animation: toggleFlip 4s ease infinite 18.1s;
-        background-position-x: 724%; }
-      .olx .items span:nth-child(182) {
-        -webkit-animation: toggleFlip 4s ease infinite 18.2s;
-        animation: toggleFlip 4s ease infinite 18.2s;
-        background-position-x: 728%; }
-      .olx .items span:nth-child(183) {
-        -webkit-animation: toggleFlip 4s ease infinite 18.3s;
-        animation: toggleFlip 4s ease infinite 18.3s;
-        background-position-x: 732%; }
-      .olx .items span:nth-child(184) {
-        -webkit-animation: toggleFlip 4s ease infinite 18.4s;
-        animation: toggleFlip 4s ease infinite 18.4s;
-        background-position-x: 736%; }
-      .olx .items span:nth-child(185) {
-        -webkit-animation: toggleFlip 4s ease infinite 18.5s;
-        animation: toggleFlip 4s ease infinite 18.5s;
-        background-position-x: 740%; }
-      .olx .items span:nth-child(186) {
-        -webkit-animation: toggleFlip 4s ease infinite 18.6s;
-        animation: toggleFlip 4s ease infinite 18.6s;
-        background-position-x: 744%; }
-      .olx .items span:nth-child(187) {
-        -webkit-animation: toggleFlip 4s ease infinite 18.7s;
-        animation: toggleFlip 4s ease infinite 18.7s;
-        background-position-x: 748%; }
-      .olx .items span:nth-child(188) {
-        -webkit-animation: toggleFlip 4s ease infinite 18.8s;
-        animation: toggleFlip 4s ease infinite 18.8s;
-        background-position-x: 752%; }
-      .olx .items span:nth-child(189) {
-        -webkit-animation: toggleFlip 4s ease infinite 18.9s;
-        animation: toggleFlip 4s ease infinite 18.9s;
-        background-position-x: 756%; }
-      .olx .items span:nth-child(190) {
-        -webkit-animation: toggleFlip 4s ease infinite 19s;
-        animation: toggleFlip 4s ease infinite 19s;
-        background-position-x: 760%; }
-      .olx .items span:nth-child(191) {
-        -webkit-animation: toggleFlip 4s ease infinite 19.1s;
-        animation: toggleFlip 4s ease infinite 19.1s;
-        background-position-x: 764%; }
-      .olx .items span:nth-child(192) {
-        -webkit-animation: toggleFlip 4s ease infinite 19.2s;
-        animation: toggleFlip 4s ease infinite 19.2s;
-        background-position-x: 768%; }
-      .olx .items span:nth-child(193) {
-        -webkit-animation: toggleFlip 4s ease infinite 19.3s;
-        animation: toggleFlip 4s ease infinite 19.3s;
-        background-position-x: 772%; }
-      .olx .items span:nth-child(194) {
-        -webkit-animation: toggleFlip 4s ease infinite 19.4s;
-        animation: toggleFlip 4s ease infinite 19.4s;
-        background-position-x: 776%; }
-      .olx .items span:nth-child(195) {
-        -webkit-animation: toggleFlip 4s ease infinite 19.5s;
-        animation: toggleFlip 4s ease infinite 19.5s;
-        background-position-x: 780%; }
-      .olx .items span:nth-child(196) {
-        -webkit-animation: toggleFlip 4s ease infinite 19.6s;
-        animation: toggleFlip 4s ease infinite 19.6s;
-        background-position-x: 784%; }
-      .olx .items span:nth-child(197) {
-        -webkit-animation: toggleFlip 4s ease infinite 19.7s;
-        animation: toggleFlip 4s ease infinite 19.7s;
-        background-position-x: 788%; }
-      .olx .items span:nth-child(198) {
-        -webkit-animation: toggleFlip 4s ease infinite 19.8s;
-        animation: toggleFlip 4s ease infinite 19.8s;
-        background-position-x: 792%; }
-      .olx .items span:nth-child(199) {
-        -webkit-animation: toggleFlip 4s ease infinite 19.9s;
-        animation: toggleFlip 4s ease infinite 19.9s;
-        background-position-x: 796%; }
-      .olx .items span:nth-child(200) {
-        -webkit-animation: toggleFlip 4s ease infinite 20s;
-        animation: toggleFlip 4s ease infinite 20s;
-        background-position-x: 800%; }
+      background-color: #e3e3e3; }
 
 /*
 		_helper.scss	

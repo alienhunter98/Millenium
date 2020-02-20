@@ -33,8 +33,8 @@ $(document).ready(function(){
 	    dotsEach:true,
 
 	    navText: [
-	    	'<svg class="flickity-button-icon btn-left" viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"></path></svg>',
-	    	'<svg class="flickity-button-icon btn-right" viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"></path></svg>'
+	    	'<i class="icon-back"></i>',
+	    	'<i class="icon-back"></i>'
 	    	],
 	    responsive:{
 	        0:{
@@ -48,16 +48,16 @@ $(document).ready(function(){
 	        }
 	    }
 	});
-	$('.waw-carousel').owlCarousel({
+	$('.products-carousel').owlCarousel({
 	    loop: true, // Зациклирование
 	    margin: 0, // Отступы
 	    nav: true, // Навигация
-	    dots: false, // Точки
+	    dots: true, // Точки
 	    dotsEach:true,
 	    
 	    navText: [
-	    	'<svg class="flickity-button-icon btn-left" viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"></path></svg>',
-	    	'<svg class="flickity-button-icon btn-right" viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"></path></svg>'
+	    	'<i class="icon-back"></i>',
+	    	'<i class="icon-back"></i>'
 	    	],
 	    responsive:{
 	        0:{
@@ -67,7 +67,7 @@ $(document).ready(function(){
 	            items:2
 	        },
 	        1000:{
-	            items:4
+	            items:3
 	        }
 	    }
 	});
