@@ -65,7 +65,7 @@ gulp.task('scripts', () =>
 			//app+'/js/plugins/wow.js',
 			app+'/js/plugins/owl.carousel.min.js',
 			app+'/js/plugins/jquery.fancybox.js',
-			//app+'/js/plugins/jquery.jcarousel.js',
+			app+'/js/plugins/jquery.jcarousel.js',
 			//app+'/js/plugins/classie.js',
 			//app+'/js/plugins/masonry.pkgd.min.js',
 			app+'/js/plugins/select2.min.js',

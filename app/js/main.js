@@ -94,16 +94,16 @@ $(document).ready(function(){
 	        }
 	    }
 	});
-	$('.idea-carousel').owlCarousel({
-	    loop: false, // Зациклирование
+	$('.team-carousel').owlCarousel({
+	    loop: true, // Зациклирование
 	    margin: 30, // Отступы
-	    nav: false, // Навигация
+	    nav: true, // Навигация
 	    dots: true, // Точки
 	    dotsEach:true,
-	    startPosition:1,
+	    startPosition:0,
 	    navText: [
-	    	'<svg class="flickity-button-icon btn-left" viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"></path></svg>',
-	    	'<svg class="flickity-button-icon btn-right" viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"></path></svg>'
+	    	'<i class="icon-back"></i>',
+	    	'<i class="icon-back"></i>'
 	    	],
 	    responsive:{
 	        0:{
@@ -113,7 +113,30 @@ $(document).ready(function(){
 	            items:1
 	        },
 	        1000:{
-	            items:2
+	            items:3
+	        }
+	    }
+	});
+	$('.news-carousel').owlCarousel({
+	    loop: true, // Зациклирование
+	    margin: 30, // Отступы
+	    nav: true, // Навигация
+	    dots: false, // Точки
+	    dotsEach:true,
+	    startPosition:0,
+	    navText: [
+	    	'<i class="icon-back"></i>',
+	    	'<i class="icon-back"></i>'
+	    	],
+	    responsive:{
+	        0:{
+	            items:1
+	        },
+	        600:{ 
+	            items:1
+	        },
+	        1000:{
+	            items:3
 	        }
 	    }
 	});
@@ -174,8 +197,19 @@ $(document).ready(function(){
 	tabContent.find('[data-toggle="collapse"]').on("click", function(){
 		tabContent.find(".collapse").collapse("hide");
 	})
-
-
+//slick
+$('.slick-carousel').slick({
+    infinite: true,
+	  vertical:!checkSm(),
+	  verticalSwiping:false,
+	  slidesToShow: checkSm() ? 1 : 3,
+	  slidesToScroll: 1,
+	  prevArrow: $('.top-arrow'),
+	  nextArrow: $('.bottom-arrow')
+  });
+	function checkSm() {
+	  return $(document).width() <= 991;
+	}
 	//SCROLL
     var minMenu = $(".header-scroll") || null;
     var headerRange = false;

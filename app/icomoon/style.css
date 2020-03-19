@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?aynp7p');
-  src:  url('fonts/icomoon.eot?aynp7p#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?aynp7p') format('truetype'),
-    url('fonts/icomoon.woff?aynp7p') format('woff'),
-    url('fonts/icomoon.svg?aynp7p#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?7vi0np');
+  src:  url('fonts/icomoon.eot?7vi0np#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?7vi0np') format('truetype'),
+    url('fonts/icomoon.woff?7vi0np') format('woff'),
+    url('fonts/icomoon.svg?7vi0np#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,30 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-next:before {
+  content: "\e909";
+}
+.icon-prew:before {
+  content: "\e90a";
+}
+.icon-project-management:before {
+  content: "\e90b";
+}
+.icon-career:before {
+  content: "\e90c";
+}
+.icon-deal:before {
+  content: "\e90d";
+}
+.icon-hired:before {
+  content: "\e90e";
+}
+.icon-leader:before {
+  content: "\e90f";
+}
+.icon-medal:before {
+  content: "\e910";
+}
 .icon-back:before {
   content: "\e900";
 }

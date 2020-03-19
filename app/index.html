@@ -40,6 +40,42 @@
 </head>
 
 <body>
+	<div class="modal-window-wrapper hide">
+		<div class="modal-window" id="block" style="display: none;">
+			<div class="success-send">
+				<h2>Мы приняли вашу заявку</h2>
+				<p>Ваша заявка получена нами, в течении 1 рабочего дня Мы свяжемся с вами и обсудим детали сотрудничества. </p>
+				<span class="btn-def" data-fancybox-close><a href="javascript:;">Хорошо</a></span>
+			</div>
+			<form id="form_def_2">
+				<div class="desc">
+					<h2>Чтобы узнать больше<br><span>или стать партнером, пожалуйста,заполните форму</span></h2>
+					<p>И получите <b>бесплатную</b> консультацию от ведущего менеджера</p>
+				</div>
+				<div class="input-content">
+					<input type="text" placeholder="Ваше имя*" name="name" class="input-control">
+					<input type="text" placeholder="Компания*" name="company" class="input-control">
+					<input type="text" placeholder="Ваш номер телефона" name="phone" id="phone" class="input-control">
+				</div>
+				<div class="buttons">
+					<div class="check-mark-wrapper">
+						<input type="checkbox" id="check-mark-1" class="hide">
+						<label for="check-mark-1">
+							<div class="check-mark">
+								<i class="fa fa-check"></i>
+							</div>
+							<div class="desc">
+								<p>Подтверждаю согласие на обработку персональных данных в соответствии с <span><a href="conditions.html">Условиями.</a></span></p>
+							</div>
+						</label>
+					</div>
+					<span class="btn-def-2">
+						<button>Отправить</button>
+					</span>
+				</div>
+			</form>
+		</div>
+	</div>
 	<input type="checkbox" id="menu" class="hide">
 	<div class="main-menu">
 		<div class="menu-list" style="background-image: url(img/menu-bg.png);">
@@ -52,30 +88,19 @@
 			<ul>
 				<li><a href="about.html"><span class="rectangle"></span>О компании</a></li>
 				<li>
-					<a href="distribution.html"><span class="rectangle"></span>Дистрибуция</a>
+					<a href="javascript:;"><span class="rectangle"></span>Дистрибуция</a>
 					<a class="btn btn-primary" data-toggle="collapse" href="#main-sub-menu-1">
 				  	<i class="fa fa-caret-down"></i>
 				  </a>
 				</li>
 				<div class="collapse main-sub-menu" id="main-sub-menu-1">
 					<ul>
-						<li><a href="">Бытовая химия</a></li>
-						<li><a href="">Продукты питания</a></li>
+						<li><a href="chemicals.html">Бытовая химия</a></li>
+						<li><a href="food.html">Продукты питания</a></li>
 					</ul>
 				</div>
 				<li><a href="news.html"><span class="rectangle"></span>Новости</a></li>
-				<li>
-					<a href="partners.html"><span class="rectangle"></span>Наши партнеры</a>
-					<a class="btn btn-primary" data-toggle="collapse" href="#main-sub-menu-2">
-				  	<i class="fa fa-caret-down"></i>
-				  </a>
-				</li>
-				<div class="collapse main-sub-menu" id="main-sub-menu-2">
-					<ul>
-						<li><a href="">Бытовая химия</a></li>
-						<li><a href="">Продукты питания</a></li>
-					</ul>
-				</div>
+				<li><a href="partners.html"><span class="rectangle"></span>Наши партнеры</a></li>
 				<li><a href="contacts.html"><span class="rectangle"></span>Контакты</a></li>
 			</ul>
 			<div class="about-info">
@@ -127,7 +152,6 @@
 		</div>
 	</div>
 	<div class="hidden-div">
-		
 	</div>
 	<header id="header">
 		<div class="header-wrapper hidden-sm hidden-xs">
@@ -144,31 +168,16 @@
 						<div class="hide-list">
 							<ul>
 								<li>
-									<a href="">Продукт 1</a>
-									<ul class="sub-menu">
-										<li><a href="">Продукт 1.1</a></li>
-										<li><a href="">Продукт 1.2</a></li>
-										<li><a href="">Продукт 1.3</a></li>
-									</ul>
+									<a href="chemicals-article.html">Стиральный порошок</a>
 								</li>
 								<li>
-									<a href="">Продукт 2</a>
-									<ul class="sub-menu">
-										<li><a href="">Продукт 2.1</a></li>
-										<li><a href="">Продукт 2.2</a></li>
-										<li><a href="">Продукт 2.3</a></li>
-									</ul>
+									<a href="chemicals-article.html">Продукт 2</a>
 								</li>
 								<li>
-									<a href="">Продукт 3</a>
-									<ul class="sub-menu">
-										<li><a href="">Продукт 3.1</a></li>
-										<li><a href="">Продукт 3.2</a></li>
-										<li><a href="">Продукт 3.3</a></li>
-									</ul>
+									<a href="chemicals-article.html">Продукт 3</a>
 								</li>
 								<li>
-									<a href="">Продукт 4</a>
+									<a href="chemicals-article.html">Продукт 4</a>
 									<!-- <ul class="sub-menu">
 										<li><a href="">Продукт 4.1</a></li>
 										<li><a href="">Продукт 4.2</a></li>
@@ -176,7 +185,7 @@
 									</ul> -->
 								</li>
 								<li>
-									<a href="">Продукт 5</a>
+									<a href="chemicals-article.html">Продукт 5</a>
 									<!-- <ul class="sub-menu">
 										<li><a href="">Продукт 5.1</a></li>
 										<li><a href="">Продукт 5.2</a></li>
@@ -194,23 +203,13 @@
 						<div class="hide-list">
 							<ul>
 								<li>
-									<a href="">Продукт 1</a>
-									<ul class="sub-menu">
-										<li><a href="">Продукт 1.1</a></li>
-										<li><a href="">Продукт 1.2</a></li>
-										<li><a href="">Продукт 1.3</a></li>
-									</ul>
+									<a href="food-article.html">Продукт 1</a>
 								</li>
 								<li>
-									<a href="">Продукт 2</a>
-									<ul class="sub-menu">
-										<li><a href="">Продукт 2.1</a></li>
-										<li><a href="">Продукт 2.2</a></li>
-										<li><a href="">Продукт 2.3</a></li>
-									</ul>
+									<a href="food-article.html">Продукт 2</a>
 								</li>
 								<li>
-									<a href="">Продукт 3</a>
+									<a href="food-article.html">Продукт 3</a>
 									<!-- <ul class="sub-menu">
 										<li><a href="">Продукт 3.1</a></li>
 										<li><a href="">Продукт 3.2</a></li>
@@ -218,7 +217,7 @@
 									</ul> -->
 								</li>
 								<li>
-									<a href="">Продукт 4</a>
+									<a href="food-article.html">Продукт 4</a>
 									<!-- <ul class="sub-menu">
 										<li><a href="">Продукт 4.1</a></li>
 										<li><a href="">Продукт 4.2</a></li>
@@ -226,7 +225,7 @@
 									</ul> -->
 								</li>
 								<li>
-									<a href="">Продукт 5</a>
+									<a href="food-article.html">Продукт 5</a>
 									<!-- <ul class="sub-menu">
 										<li><a href="">Продукт 5.1</a></li>
 										<li><a href="">Продукт 5.2</a></li>
@@ -315,7 +314,7 @@
 										<h2><span>M</span>illenium Distribution</h2>
 										<h4><span>Эксклюзивный</span> дистрибьютор в Республики <span>Узбекистан</span></h4>
 										<span class="btn-def">
-											<a href="">Вам перезвонить?</a>
+											<a href="javascript:;" data-fancybox data-src="#block">Вам перезвонить?</a>
 										</span>
 									</div>
 								</div>
@@ -324,7 +323,7 @@
 										<h2><span>M</span>illenium Distribution</h2>
 										<h4><span>Эксклюзивный</span> дистрибьютор в Республики <span>Узбекистан</span></h4>
 										<span class="btn-def">
-											<a href="">Вам перезвонить?</a>
+											<a href="javascript:;" data-fancybox data-src="#block">Вам перезвонить?</a>
 										</span>
 									</div>
 								</div>
@@ -333,7 +332,7 @@
 										<h2><span>M</span>illenium Distribution</h2>
 										<h4><span>Эксклюзивный</span> дистрибьютор в Республики <span>Узбекистан</span></h4>
 										<span class="btn-def">
-											<a href="">Вам перезвонить?</a>
+											<a href="javascript:;" data-fancybox data-src="#block">Вам перезвонить?</a>
 										</span>
 									</div>
 								</div>
@@ -342,7 +341,7 @@
 										<h2><span>M</span>illenium Distribution</h2>
 										<h4><span>Эксклюзивный</span> дистрибьютор в Республики <span>Узбекистан</span></h4>
 										<span class="btn-def">
-											<a href="">Вам перезвонить?</a>
+											<a href="javascript:;" data-fancybox data-src="#block">Вам перезвонить?</a>
 										</span>
 									</div>
 								</div>
@@ -407,7 +406,7 @@
 						</div>
 						<div class="button col-md-12">
 							<span class="btn-def-2">
-								<a href="">Подробнее</a>
+								<a href="about.html">Подробнее</a>
 							</span>
 						</div>
 					</div>
@@ -433,7 +432,7 @@
 										<div class="desc-content">
 											<h3>Чай "TUDOR" с Бергамотом 100гр</h3>
 											<span class="btn-def-2">
-												<a href="">Подробнее</a>
+												<a href="food-article.html">Подробнее</a>
 											</span>
 										</div>
 									</div>
@@ -444,9 +443,9 @@
 											<img src="img/product2.png">
 										</div>
 										<div class="desc-content">
-											<h3>Чай "TUDOR" с Бергамотом 100гр</h3>
+											<h3>Порошок</h3>
 											<span class="btn-def-2">
-												<a href="">Подробнее</a>
+												<a href="chemicals-article.html">Подробнее</a>
 											</span>
 										</div>
 									</div>
@@ -459,7 +458,7 @@
 										<div class="desc-content">
 											<h3>Чай "TUDOR" с Бергамотом 100гр</h3>
 											<span class="btn-def-2">
-												<a href="">Подробнее</a>
+												<a href="food-article.html">Подробнее</a>
 											</span>
 										</div>
 									</div>
@@ -470,9 +469,9 @@
 											<img src="img/product2.png">
 										</div>
 										<div class="desc-content">
-											<h3>Чай "TUDOR" с Бергамотом 100гр</h3>
+											<h3>Порошок</h3>
 											<span class="btn-def-2">
-												<a href="">Подробнее</a>
+												<a href="chemicals-article.html">Подробнее</a>
 											</span>
 										</div>
 									</div>
@@ -485,7 +484,7 @@
 										<div class="desc-content">
 											<h3>Чай "TUDOR" с Бергамотом 100гр</h3>
 											<span class="btn-def-2">
-												<a href="">Подробнее</a>
+												<a href="food-article.html">Подробнее</a>
 											</span>
 										</div>
 									</div>
@@ -552,16 +551,14 @@
 									</div>
 									<div class="button">
 										<span class="btn-def-2">
-											<a href="">
-												Подробнее
-											</a>
+											<a href="news-article.html">Подробнее</a>
 										</span>
 									</div>
 								</div>
 							</div>
 							<div class="novelty col-md-4">
 								<div class="img-content">
-									<img src="img/news1.png">
+									<img src="img/news2.png">
 								</div>
 								<div class="desc-content">
 									<div class="date">
@@ -573,16 +570,14 @@
 									</div>
 									<div class="button">
 										<span class="btn-def-2">
-											<a href="">
-												Подробнее
-											</a>
+											<a href="news-article.html">Подробнее</a>
 										</span>
 									</div>
 								</div>
 							</div>
 							<div class="novelty col-md-4">
 								<div class="img-content">
-									<img src="img/news1.png">
+									<img src="img/news3.png">
 								</div>
 								<div class="desc-content">
 									<div class="date">
@@ -594,9 +589,7 @@
 									</div>
 									<div class="button">
 										<span class="btn-def-2">
-											<a href="">
-												Подробнее
-											</a>
+											<a href="news-article.html">Подробнее</a>
 										</span>
 									</div>
 								</div>
@@ -605,7 +598,11 @@
 					</div>
 				</div>	
 			</section>
-			<section class="partners-wrapper">
+			
+		</div>
+	</main>
+	<footer>
+		<section class="partners-wrapper">
 				<div class="container">
 					<div class="owl-carousel partners-carousel">
 						<div class="item-wrapper">
@@ -646,9 +643,6 @@
 					</div>
 				</div>
 			</section>
-		</div>
-	</main>
-	<footer>
 		<div class="footer-main">
 			<div class="container">
 				<div class="footer-info">
@@ -707,6 +701,7 @@
 	</footer>
 		<!-- Подключение скриптов -->
 	<script src="js/scripts.min.js"></script>
+	<script type="text/javascript" src="slick/slick.min.js"></script>
 	<script src="js/jquery.maskedinput.js"></script>
 	<script src="js/validate.min.js"></script>
 	<script>
