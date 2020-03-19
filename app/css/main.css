@@ -11212,6 +11212,10 @@ footer .footer-bottom {
           width: 100%;
           min-height: 250px;
           max-height: 250px; }
+          @media (max-width: 991px) {
+            .chemicals-wrapper .chemicals-items .chemicals-item .img-content img {
+              min-height: auto;
+              max-height: auto; } }
       .chemicals-wrapper .chemicals-items .chemicals-item .desc-content {
         margin-top: 40px;
         min-height: 50px; }

@@ -3091,6 +3091,10 @@ footer{
 					width: 100%;
 					min-height: 250px;
 					max-height: 250px;
+					@media(max-width: 991px){
+						min-height: auto;
+						max-height: auto;
+					}
 				}
 			}
 			.desc-content{
