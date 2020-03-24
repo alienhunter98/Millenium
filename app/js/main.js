@@ -205,7 +205,11 @@ $('.slick-carousel').slick({
 	  slidesToShow: checkSm() ? 1 : 3,
 	  slidesToScroll: 1,
 	  prevArrow: $('.top-arrow'),
-	  nextArrow: $('.bottom-arrow')
+	  nextArrow: $('.bottom-arrow'),
+	  pauseOnHover: false,
+	  verticalScrolling: true,
+	  speed: 1000,
+	  useTransform: true,
   });
 	function checkSm() {
 	  return $(document).width() <= 991;
